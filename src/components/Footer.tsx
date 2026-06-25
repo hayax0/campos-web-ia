@@ -60,6 +60,7 @@ export default function Footer() {
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-xs text-white/50">
           <a href="#servicos" className="hover:text-white transition-colors">Serviços</a>
           <a href="#solucoes" className="hover:text-white transition-colors">Soluções</a>
+          <a href="#projetos" className="hover:text-white transition-colors">Projetos</a>
           <a href="#planos" className="hover:text-white transition-colors">Planos</a>
           <a href="#como-funciona" className="hover:text-white transition-colors">Processo</a>
           <a href="#faq" className="hover:text-white transition-colors">FAQ</a>

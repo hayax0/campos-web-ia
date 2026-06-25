@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface FAQItem {
   question: string;
@@ -33,6 +34,25 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="faq" className="relative py-24 md:py-32 px-6 bg-black z-10 border-t border-white/5 w-full overflow-hidden">
       {/* Background decoration */}
@@ -40,22 +60,35 @@ export default function FAQ() {
 
       <div className="max-w-4xl mx-auto w-full">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-16 md:mb-24"
+        >
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
             Perguntas Frequentes
           </h2>
           <p className="font-sans text-white/70 text-base md:text-lg mt-4">
             Respostas diretas e transparentes sobre o funcionamento e o processo.
           </p>
-        </div>
+        </motion.div>
 
         {/* Accordions */}
-        <div className="space-y-4 w-full">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="space-y-4 w-full"
+        >
           {faqData.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div
+              <motion.div
                 key={idx}
+                variants={itemVariants}
                 className="glow-card rounded-2xl overflow-hidden"
               >
                 <button
@@ -88,21 +121,35 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                {/* Content Container */}
-                <div
-                  className={`accordion-content ${isOpen ? "open border-t border-white/5" : ""}`}
-                >
-                  <div className="p-6 md:p-8 font-sans text-sm md:text-base text-white/80 leading-relaxed bg-transparent">
-                    {item.answer}
-                  </div>
-                </div>
-              </div>
+                {/* Content Container with AnimatePresence */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden border-t border-white/5"
+                    >
+                      <div className="p-6 md:p-8 font-sans text-sm md:text-base text-white/80 leading-relaxed bg-transparent">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Action Link for further questions */}
-        <div className="text-center mt-12 text-sm text-white/50">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mt-12 text-sm text-white/50"
+        >
           Ainda tem dúvidas sobre o processo?{" "}
           <a
             href="https://wa.me/5521997411009?text=Oi%20Caio%2C%20tenho%20uma%20duvida%20sobre%20o%20funcionamento"
@@ -112,7 +159,7 @@ export default function FAQ() {
           >
             Falar diretamente comigo no WhatsApp
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

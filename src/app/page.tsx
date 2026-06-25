@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problems from "@/components/Problems";
 import Services from "@/components/Services";
+import Portfolio from "@/components/Portfolio";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -24,6 +25,9 @@ export default function Home() {
 
         {/* Services Section (Solutions) */}
         <Services />
+
+        {/* Portfolio Section (Provas) */}
+        <Portfolio />
 
         {/* How It Works Section (Process) */}
         <HowItWorks />

@@ -1,6 +1,27 @@
 "use client";
 
+import { motion, Variants } from "framer-motion";
+
 export default function Problems() {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="problemas" className="relative py-24 md:py-32 px-6 bg-black z-10 border-t border-white/5 w-full overflow-hidden">
       {/* Background decoration */}
@@ -8,20 +29,35 @@ export default function Problems() {
 
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
-        <div className="max-w-3xl mb-16 md:mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-3xl mb-16 md:mb-24"
+        >
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
             Seu negócio está <span className="font-serif italic text-brand-glow font-normal">perdendo</span> clientes silenciosamente todos os dias.
           </h2>
           <p className="font-sans text-white/70 text-base md:text-lg mt-4 max-w-2xl">
             Seu site e seu atendimento são a porta de entrada da sua empresa. Se eles não funcionarem de forma excelente, os potenciais clientes acabam fechando com quem responder mais rápido ou parecer mais profissional.
           </p>
-        </div>
+        </motion.div>
 
         {/* Bento Grid layout (Asymmetric & Premium) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full"
+        >
           
           {/* Card Principal - Ocupa 2 colunas */}
-          <div className="glow-card group p-8 md:p-10 rounded-3xl md:col-span-2 flex flex-col justify-between min-h-[340px] md:min-h-[380px] relative overflow-hidden">
+          <motion.div
+            variants={itemVariants}
+            className="glow-card group p-8 md:p-10 rounded-3xl md:col-span-2 flex flex-col justify-between min-h-[340px] md:min-h-[380px] relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(37,211,102,0.05)]"
+          >
             <div className="flex flex-col justify-between h-full z-10 w-full">
               <div>
                 <h3 className="font-display text-2xl font-bold text-white mb-4 group-hover:text-brand-glow transition-colors duration-300">
@@ -41,10 +77,13 @@ export default function Problems() {
                 <span>Aparência profissional gera confiança imediata</span>
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2 (Atendimento limitado) - Coluna 1 */}
-          <div className="glow-card group p-8 md:p-10 rounded-3xl flex flex-col justify-between min-h-[300px]">
+          <motion.div
+            variants={itemVariants}
+            className="glow-card group p-8 md:p-10 rounded-3xl flex flex-col justify-between min-h-[300px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(37,211,102,0.05)]"
+          >
             <div>
               <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-brand-glow transition-colors duration-300">
                 Contatos sem resposta rápida
@@ -59,10 +98,13 @@ export default function Problems() {
               </svg>
               <span>Quem responde primeiro fecha a venda</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 3 (Processos manuais) - Coluna 1 */}
-          <div className="glow-card group p-8 md:p-10 rounded-3xl flex flex-col justify-between min-h-[300px]">
+          <motion.div
+            variants={itemVariants}
+            className="glow-card group p-8 md:p-10 rounded-3xl flex flex-col justify-between min-h-[300px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(37,211,102,0.05)]"
+          >
             <div>
               <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-brand-glow transition-colors duration-300">
                 Perda de tempo digitando as mesmas mensagens
@@ -77,9 +119,9 @@ export default function Problems() {
               </svg>
               <span>Foque o seu tempo no que realmente dá lucro</span>
             </div>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

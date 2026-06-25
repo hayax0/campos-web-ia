@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,7 +23,10 @@ export default function Navbar() {
   const whatsappUrl = "https://wa.me/5521997411009?text=Oi%20Caio%2C%20gostaria%20de%20uma%20an%C3%A1lise%20estrat%C3%A9gica%20para%20minha%20empresa";
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
         isScrolled
           ? "bg-black/30 backdrop-blur-sm py-4 border-b border-white/5"
@@ -47,6 +51,7 @@ export default function Navbar() {
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-white/70 bg-white/[0.03] backdrop-blur-lg border border-white/10 px-8 py-2.5 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
           <a href="#servicos" className="hover:text-brand-glow transition-colors">Serviços</a>
           <a href="#solucoes" className="hover:text-brand-glow transition-colors">Soluções</a>
+          <a href="#projetos" className="hover:text-brand-glow transition-colors">Projetos</a>
           <a href="#planos" className="hover:text-brand-glow transition-colors">Planos</a>
           <a href="#contato" className="hover:text-brand-glow transition-colors">Contato</a>
         </nav>
@@ -96,50 +101,63 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Dropdown - Visible below 1024px */}
-      <div
-        className={`lg:hidden absolute top-full left-0 right-0 bg-black/95 border-b border-white/10 transition-all duration-300 w-full ${
-          isMobileMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
-      >
-        <div className="px-6 py-8 flex flex-col gap-6 text-base font-medium">
-          <a
-            href="#servicos"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white/70 hover:text-white transition-colors"
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="lg:hidden absolute top-full left-0 right-0 bg-black/95 border-b border-white/10 w-full overflow-hidden"
           >
-            Serviços
-          </a>
-          <a
-            href="#solucoes"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white/70 hover:text-white transition-colors"
-          >
-            Soluções
-          </a>
-          <a
-            href="#planos"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white/70 hover:text-white transition-colors"
-          >
-            Planos
-          </a>
-          <a
-            href="#contato"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white/70 hover:text-white transition-colors"
-          >
-            Contato
-          </a>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsapp-glow-button flex items-center justify-center bg-brand-glow text-black font-bold py-3 rounded-full text-center mt-2 w-full"
-          >
-            Falar com Especialista
-          </a>
-        </div>
-      </div>
-    </header>
+            <div className="px-6 py-8 flex flex-col gap-6 text-base font-medium">
+              <a
+                href="#servicos"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                Serviços
+              </a>
+              <a
+                href="#solucoes"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                Soluções
+              </a>
+              <a
+                href="#projetos"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                Projetos
+              </a>
+              <a
+                href="#planos"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                Planos
+              </a>
+              <a
+                href="#contato"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                Contato
+              </a>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-glow-button flex items-center justify-center bg-brand-glow text-black font-bold py-3 rounded-full text-center mt-2 w-full"
+              >
+                Falar com Especialista
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }

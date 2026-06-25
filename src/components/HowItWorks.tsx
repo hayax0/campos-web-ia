@@ -1,5 +1,7 @@
 "use client";
 
+import { motion, Variants } from "framer-motion";
+
 interface Step {
   number: string;
   title: string;
@@ -30,6 +32,33 @@ export default function HowItWorks() {
     },
   ];
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const lineVariants: Variants = {
+    hidden: { scaleX: 0 },
+    visible: {
+      scaleX: 1,
+      transition: { delay: 0.5, duration: 0.6, ease: "easeInOut" },
+    },
+  };
+
   return (
     <section id="como-funciona" className="relative py-24 md:py-32 px-6 bg-black z-10 border-t border-white/5 w-full overflow-hidden">
       {/* Background Radial Glow */}
@@ -37,25 +66,42 @@ export default function HowItWorks() {
 
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
+        >
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
             Como <span className="font-serif italic text-brand-glow font-normal">funciona</span> o nosso trabalho.
           </h2>
           <p className="font-sans text-white/70 text-base md:text-lg mt-4">
             Etapas simples e transparentes para posicionar sua marca e facilitar o contato dos seus clientes.
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative w-full">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative w-full"
+        >
           {steps.map((step, idx) => (
-            <div
+            <motion.div
               key={step.number}
-              className="glow-card relative p-8 rounded-2xl group flex flex-col justify-between"
+              variants={cardVariants}
+              className="glow-card relative p-8 rounded-2xl group flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(37,211,102,0.05)] h-full"
             >
               {/* Connector line (Visible on large screens, except for the last step) */}
               {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-[1px] bg-gradient-to-r from-brand-glow/20 to-transparent z-0 pointer-events-none" />
+                <motion.div
+                  variants={lineVariants}
+                  style={{ originX: 0 }}
+                  className="hidden lg:block absolute top-1/2 -right-4 w-8 h-[1px] bg-gradient-to-r from-brand-glow/40 to-transparent z-0 pointer-events-none"
+                />
               )}
 
               <div>
@@ -80,9 +126,9 @@ export default function HowItWorks() {
                 <span className="w-1.5 h-1.5 rounded-full bg-current" />
                 <span className="text-[10px] uppercase font-mono tracking-widest font-semibold">Etapa {step.number}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

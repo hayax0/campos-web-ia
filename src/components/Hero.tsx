@@ -1,14 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const whatsappUrl = "https://wa.me/5521997411009?text=Oi%20Caio%2C%20quero%20uma%20an%C3%A1lise%20estrat%C3%A9gica%20do%20meu%20neg%C3%B3cio";
 
   return (
@@ -31,29 +25,32 @@ export default function Hero() {
         {/* Coluna Esquerda: Conteúdo de Texto e CTAs (Alinhamento editorial esquerdo) */}
         <div className="lg:col-span-7 flex flex-col items-start text-left w-full">
           {/* Headline (Editorial style combining Display & Serif Italic font) */}
-          <h1
-            className={`font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6 transition-all duration-1000 delay-200 transform ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6"
           >
             Coloque sua empresa na internet com o{" "}
             <span className="font-serif italic font-normal text-brand-glow">visual</span> que ela merece e nunca mais perca oportunidades.
-          </h1>
+          </motion.h1>
 
           {/* Subheadline */}
-          <p
-            className={`font-sans text-sm sm:text-base md:text-lg text-white/70 max-w-2xl leading-relaxed mb-10 transition-all duration-1000 delay-400 transform ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="font-sans text-sm sm:text-base md:text-lg text-white/70 max-w-2xl leading-relaxed mb-10"
           >
             Construímos sites rápidos e sistemas de atendimento automatizado no WhatsApp. O posicionamento de credibilidade que seu negócio precisa para atrair e qualificar clientes todos os dias.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div
-            className={`flex flex-col sm:flex-row gap-4 w-full sm:w-auto transition-all duration-1000 delay-600 transform ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
             <a
               href={whatsappUrl}
@@ -69,17 +66,18 @@ export default function Hero() {
             >
               Ver Serviços
             </a>
-          </div>
+          </motion.div>
         </div>
 
         {/* Coluna Direita: Dashboard de Métricas Assimétrico & Selo de Luxo */}
         <div className="lg:col-span-5 flex flex-col items-center justify-center relative w-full h-full min-h-[350px] lg:min-h-[420px]">
           
           {/* Selo Circular Rotativo Premium (Garantia de Design Editorial) */}
-          <div
-            className={`absolute top-0 right-4 lg:-top-12 lg:-right-4 w-28 h-28 md:w-32 md:h-32 transition-all duration-1000 delay-800 z-20 ${
-              mounted ? "opacity-100 scale-100" : "opacity-0 scale-75"
-            }`}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-0 right-4 lg:-top-12 lg:-right-4 w-28 h-28 md:w-32 md:h-32 z-20"
           >
             <div className="relative w-full h-full flex items-center justify-center select-none">
               {/* SVG Texto Rotativo */}
@@ -98,13 +96,14 @@ export default function Hero() {
                 </svg>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Painel Flutuante de Informações (Solid Premium Card) */}
-          <div
-            className={`glow-card p-6 md:p-8 rounded-3xl w-full max-w-[360px] relative transition-all duration-1000 delay-500 transform ${
-              mounted ? "opacity-100 translate-y-0 rotate-1" : "opacity-0 translate-y-12 rotate-0"
-            }`}
+          <motion.div
+            initial={{ opacity: 0, y: 40, rotate: 0 }}
+            animate={{ opacity: 1, y: 0, rotate: 1 }}
+            transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="glow-card p-6 md:p-8 rounded-3xl w-full max-w-[360px] relative"
           >
             {/* Linha decorativa verde sutil */}
             <div className="h-[2px] w-12 bg-brand-glow/40 rounded-full mb-6" />
@@ -140,7 +139,7 @@ export default function Hero() {
 
             {/* Decorador gráfico sutil no canto do painel */}
             <div className="absolute -bottom-1 -right-1 w-6 h-6 border-b border-r border-white/10 rounded-br-2xl pointer-events-none" />
-          </div>
+          </motion.div>
 
           {/* Elemento de fundo geométrico sutil atrás do painel */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] bg-brand-glow/[0.015] border border-brand-glow/5 rounded-full pointer-events-none z-0" />
@@ -149,13 +148,14 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator - Responsive */}
-      <div
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25 text-[10px] font-mono tracking-widest transition-opacity duration-1000 delay-1000 z-10 ${
-          mounted ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25 text-[10px] font-mono tracking-widest z-10"
       >
         <span className="animate-bounce">ROLE PARA DESCUBRIR</span>
-      </div>
+      </motion.div>
     </section>
   );
 }

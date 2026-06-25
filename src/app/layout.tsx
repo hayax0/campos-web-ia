@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Campos Web & IA — Consultoria B2B de Transformação Digital",
   description:
     "Construímos estruturas digitais premium e automações inteligentes que ajudam empresas a conquistar clientes, melhorar processos e vender todos os dias.",
+  icons: {
+    icon: "/icon.png",
+  },
   keywords: [
     "landing page B2B",
     "vitrine digital premium",

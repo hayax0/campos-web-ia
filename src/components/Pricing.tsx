@@ -1,5 +1,7 @@
 "use client";
 
+import { motion, Variants } from "framer-motion";
+
 interface PlanItem {
   name: string;
   price: string;
@@ -80,6 +82,25 @@ export default function Pricing() {
     }
   ];
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="planos" className="relative py-24 md:py-32 px-6 bg-black z-10 border-t border-white/5 w-full overflow-hidden">
       {/* Background Radial Glow */}
@@ -87,21 +108,34 @@ export default function Pricing() {
 
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
+        >
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
             Soluções criadas para trazer mais <span className="font-serif italic text-brand-glow font-normal">clientes</span> para você.
           </h2>
           <p className="font-sans text-white/70 text-base md:text-lg mt-4">
             Escolha o modelo ideal para o momento atual do seu negócio. Projetos focados em facilidade de uso e atendimento rápido.
           </p>
-        </div>
+        </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-28 w-full">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-28 w-full items-stretch"
+        >
           {plans.map((plan) => (
-            <div
+            <motion.div
               key={plan.name}
-              className={`glow-card relative p-8 md:p-12 rounded-3xl flex flex-col justify-between overflow-hidden ${
+              variants={itemVariants}
+              className={`glow-card relative p-8 md:p-12 rounded-3xl flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_15px_40px_rgba(37,211,102,0.05)] ${
                 plan.popular
                   ? "border-2 border-brand-glow shadow-[0_0_35px_rgba(37,211,102,0.15)] scale-100 md:scale-[1.03] z-10"
                   : ""
@@ -180,23 +214,36 @@ export default function Pricing() {
                   {plan.ctaText}
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Testimonials Sub-section */}
         <div id="depoimentos" className="border-t border-white/5 pt-24 w-full">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
             <h3 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">
               O que dizem os clientes parceiros
             </h3>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full"
+          >
             {testimonials.map((t, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="glow-card p-8 rounded-2xl flex flex-col justify-between relative"
+                variants={itemVariants}
+                className="glow-card p-8 rounded-2xl flex flex-col justify-between relative transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(37,211,102,0.05)] h-full"
               >
                 <span className="absolute top-6 right-8 text-5xl font-serif text-white/5 select-none pointer-events-none">
                   “
@@ -212,9 +259,9 @@ export default function Pricing() {
                     {t.role} · <span className="text-brand-glow">{t.company}</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
