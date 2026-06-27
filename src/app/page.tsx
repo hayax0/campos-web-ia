@@ -8,10 +8,12 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-black w-full overflow-x-hidden">
+    <SmoothScroll>
+      <div className="flex flex-col min-h-screen bg-background w-full overflow-x-hidden">
       {/* Navigation */}
       <Navbar />
 
@@ -45,5 +47,6 @@ export default function Home() {
       {/* Footer */}
       <Footer />
     </div>
+    </SmoothScroll>
   );
 }

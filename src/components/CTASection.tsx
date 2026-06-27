@@ -27,7 +27,7 @@ export default function CTASection() {
   };
 
   return (
-    <section id="contato" className="relative py-24 md:py-32 px-6 bg-black z-10 border-t border-white/5 w-full overflow-hidden">
+    <section id="contato" className="relative py-24 md:py-32 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-glow/[0.02] rounded-full blur-[130px] pointer-events-none" />
 
@@ -39,14 +39,14 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="glow-card p-8 md:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-[0_10px_30px_rgba(37,211,102,0.05)]"
+          className="glow-card p-8 md:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-[0_10px_30px_rgba(37,211,102,0.02)]"
         >
           <div>
             {/* Header Form */}
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2 leading-tight text-center">
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2 leading-tight text-center">
               Tem alguma dúvida? Mande uma mensagem
             </h3>
-            <p className="font-sans text-white/75 text-sm mb-8 leading-relaxed text-center">
+            <p className="font-sans text-foreground/75 text-sm mb-8 leading-relaxed text-center">
               Preencha os campos abaixo para enviar suas dúvidas direto para o meu WhatsApp e conversarmos.
             </p>
 
@@ -55,7 +55,7 @@ export default function CTASection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Nome */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="nome" className="text-xs font-semibold text-white/80 font-sans">
+                  <label htmlFor="nome" className="text-xs font-semibold text-foreground/80 font-sans">
                     Nome Completo
                   </label>
                   <input
@@ -65,13 +65,13 @@ export default function CTASection() {
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
                     placeholder="Seu nome completo"
-                    className="w-full bg-black border border-white/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 transition-all outline-none font-sans"
+                    className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none font-sans"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-xs font-semibold text-white/80 font-sans">
+                  <label htmlFor="email" className="text-xs font-semibold text-foreground/80 font-sans">
                     E-mail
                   </label>
                   <input
@@ -80,14 +80,14 @@ export default function CTASection() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Seu e-mail"
-                    className="w-full bg-black border border-white/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 transition-all outline-none font-sans"
+                    className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none font-sans"
                   />
                 </div>
               </div>
 
               {/* Nicho */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="nicho" className="text-xs font-semibold text-white/80 font-sans">
+                <label htmlFor="nicho" className="text-xs font-semibold text-foreground/80 font-sans">
                   Ramo do seu Negócio
                 </label>
                 <input
@@ -96,13 +96,13 @@ export default function CTASection() {
                   value={formData.nicho}
                   onChange={(e) => setFormData({ ...formData, nicho: e.target.value })}
                   placeholder="Qual a área de atuação da empresa? (ex: Construção, Clínica, Pet Shop)"
-                  className="w-full bg-black border border-white/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 transition-all outline-none font-sans"
+                  className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none font-sans"
                 />
               </div>
 
               {/* Mensagem */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="mensagem" className="text-xs font-semibold text-white/80 font-sans">
+                <label htmlFor="mensagem" className="text-xs font-semibold text-foreground/80 font-sans">
                   Mensagem ou Dúvida
                 </label>
                 <textarea
@@ -112,14 +112,14 @@ export default function CTASection() {
                   value={formData.mensagem}
                   onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
                   placeholder="Escreva aqui sua dúvida ou mensagem"
-                  className="w-full bg-black border border-white/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 transition-all outline-none resize-none font-sans"
+                  className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none resize-none font-sans"
                 />
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-4 bg-brand-glow text-black font-bold rounded-xl text-sm transition-all duration-300 hover:bg-brand-glow/90 whatsapp-glow-button text-center flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-4 bg-brand-glow text-white font-semibold rounded-xl text-sm transition-all duration-300 hover:bg-brand-glow/90 shadow-[0_4px_14px_rgba(20,160,100,0.15)] hover:shadow-[0_6px_20px_rgba(20,160,100,0.25)] whatsapp-glow-button text-center flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Enviar para o WhatsApp</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

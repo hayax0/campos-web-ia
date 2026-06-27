@@ -20,7 +20,7 @@ export default function FAQ() {
     },
     {
       question: "Quanto tempo leva para ficar pronto?",
-      answer: "O Site Profissional é entregue em até 7 dias úteis após a etapa de planejamento. O ecossistema completo com o atendimento automático no WhatsApp leva de 10 a 15 dias úteis para ficar pronto e testado."
+      answer: "O Site Profissional é entregue em até 2 semanas após a etapa de planejamento. O ecossistema completo com o atendimento automático no WhatsApp leva de 9 a 14 semanas para ficar pronto e testado."
     },
     {
       question: "Como o site é criado?",
@@ -54,7 +54,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative py-24 md:py-32 px-6 bg-black z-10 border-t border-white/5 w-full overflow-hidden">
+    <section id="faq" className="relative py-24 md:py-32 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
       {/* Background decoration */}
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-brand-glow/[0.01] rounded-full blur-[120px] pointer-events-none" />
 
@@ -67,10 +67,10 @@ export default function FAQ() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16 md:mb-24"
         >
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
             Perguntas Frequentes
           </h2>
-          <p className="font-sans text-white/70 text-base md:text-lg mt-4">
+          <p className="font-sans text-foreground/70 text-base md:text-lg mt-4">
             Respostas diretas e transparentes sobre o funcionamento e o processo.
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ export default function FAQ() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="space-y-4 w-full"
+          className="w-full border-t border-black/5 divide-y divide-black/5"
         >
           {faqData.map((item, idx) => {
             const isOpen = openIndex === idx;
@@ -89,23 +89,23 @@ export default function FAQ() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className="glow-card rounded-2xl overflow-hidden"
+                className="overflow-hidden"
               >
                 <button
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full px-6 py-5 md:py-6 flex items-center justify-between text-left focus:outline-none"
+                  className="w-full py-6 flex items-center justify-between text-left focus:outline-none group"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-display text-base md:text-lg font-bold text-white pr-4">
+                  <span className="font-display text-base md:text-lg font-bold text-foreground pr-4 group-hover:text-brand-glow transition-colors duration-300">
                     {item.question}
                   </span>
                   <span
-                    className={`w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-white/60 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-brand-glow/15 text-brand-glow" : ""
+                    className={`w-6 h-6 rounded-full bg-black/5 flex items-center justify-center text-foreground/60 transition-all duration-300 ${
+                      isOpen ? "rotate-180 bg-brand-glow/10 text-brand-glow" : "group-hover:bg-black/10"
                     }`}
                   >
                     <svg
-                      className="w-4 h-4"
+                      className="w-3.5 h-3.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -114,7 +114,7 @@ export default function FAQ() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth={2.5}
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
@@ -128,10 +128,10 @@ export default function FAQ() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden border-t border-white/5"
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
                     >
-                      <div className="p-6 md:p-8 font-sans text-sm md:text-base text-white/80 leading-relaxed bg-transparent">
+                      <div className="pb-6 font-sans text-sm md:text-base text-foreground/70 leading-relaxed bg-transparent">
                         {item.answer}
                       </div>
                     </motion.div>
@@ -148,7 +148,7 @@ export default function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mt-12 text-sm text-white/50"
+          className="text-center mt-12 text-sm text-foreground/50"
         >
           Ainda tem dúvidas sobre o processo?{" "}
           <a

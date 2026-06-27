@@ -8,15 +8,15 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-24 px-6 overflow-hidden bg-radial-glow w-full">
       {/* Background Tech Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.008)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.008)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] z-0" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] z-0" />
 
       {/* Background Glows (Green theme) */}
       <div className="absolute top-1/3 left-1/3 w-[260px] h-[260px] md:w-[500px] md:h-[500px] bg-brand-glow/5 rounded-full blur-[110px] pointer-events-none z-0" />
 
       {/* Decorative vertical brand text on side (Luxury details) */}
-      <div className="hidden xl:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-4 z-10 text-[9px] font-mono tracking-[0.3em] text-white/20 uppercase select-none [writing-mode:vertical-lr]">
+      <div className="hidden xl:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-4 z-10 text-[9px] font-mono tracking-[0.3em] text-foreground/20 uppercase select-none [writing-mode:vertical-lr]">
         <span>EST. 2026</span>
-        <div className="w-[1px] h-12 bg-white/10" />
+        <div className="w-[1px] h-12 bg-foreground/10" />
         <span>CAMPOS WEB & IA</span>
       </div>
 
@@ -26,10 +26,10 @@ export default function Hero() {
         <div className="lg:col-span-7 flex flex-col items-start text-left w-full">
           {/* Headline (Editorial style combining Display & Serif Italic font) */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-[-0.03em] text-foreground leading-[1.05] mb-6 text-balance"
           >
             Coloque sua empresa na internet com o{" "}
             <span className="font-serif italic font-normal text-brand-glow">visual</span> que ela merece e nunca mais perca oportunidades.
@@ -37,17 +37,17 @@ export default function Hero() {
 
           {/* Subheadline */}
           <motion.p
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans text-sm sm:text-base md:text-lg text-white/70 max-w-2xl leading-relaxed mb-10"
+            className="font-sans text-sm sm:text-base md:text-lg text-foreground/70 max-w-[60ch] leading-relaxed mb-10 text-pretty"
           >
             Construímos sites rápidos e sistemas de atendimento automatizado no WhatsApp. O posicionamento de credibilidade que seu negócio precisa para atrair e qualificar clientes todos os dias.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
@@ -56,93 +56,49 @@ export default function Hero() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="whatsapp-glow-button w-full sm:w-auto px-8 py-4 bg-brand-glow text-black font-bold rounded-full text-sm transition-transform duration-300 hover:scale-[1.02] text-center"
+              className="whatsapp-glow-button w-full sm:w-auto px-8 py-4 bg-brand-glow text-white font-semibold rounded-full text-sm text-center shadow-[0_4px_14px_rgba(20,160,100,0.15)] hover:shadow-[0_6px_20px_rgba(20,160,100,0.25)] transition-all duration-300 hover:bg-brand-glow/90"
             >
               Conversar no WhatsApp
             </a>
             <a
               href="#servicos"
-              className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 hover:border-white/20 text-white font-medium rounded-full text-sm transition-all duration-300 hover:bg-white/10 text-center"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-foreground/15 text-foreground font-semibold rounded-full text-sm transition-all duration-300 hover:bg-foreground/[0.03] hover:border-foreground/25 text-center shadow-[0_4px_12px_rgba(0,0,0,0.01)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.03)]"
             >
               Ver Serviços
             </a>
           </motion.div>
         </div>
 
-        {/* Coluna Direita: Dashboard de Métricas Assimétrico & Selo de Luxo */}
-        <div className="lg:col-span-5 flex flex-col items-center justify-center relative w-full h-full min-h-[350px] lg:min-h-[420px]">
-          
-          {/* Selo Circular Rotativo Premium (Garantia de Design Editorial) */}
+        {/* Coluna Direita: Posicionamento Editorial B2B (Premium & Minimalista) */}
+        <div className="lg:col-span-5 flex flex-col items-start justify-center relative w-full h-full min-h-[300px] lg:pl-12 lg:border-l border-black/5">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute top-0 right-4 lg:-top-12 lg:-right-4 w-28 h-28 md:w-32 md:h-32 z-20"
-          >
-            <div className="relative w-full h-full flex items-center justify-center select-none">
-              {/* SVG Texto Rotativo */}
-              <svg className="w-full h-full animate-spin-slow text-white/30" viewBox="0 0 100 100">
-                <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-                <text className="font-mono text-[6.5px] font-bold uppercase tracking-[0.15em] fill-current">
-                  <textPath href="#circlePath">
-                    · CAMPOS WEB & IA · DESIGN EXCLUSIVO B2B ·
-                  </textPath>
-                </text>
-              </svg>
-              {/* Ícone central no selo */}
-              <div className="absolute w-12 h-12 rounded-full bg-black/60 border border-white/10 flex items-center justify-center shadow-lg backdrop-blur-sm">
-                <svg className="w-5 h-5 text-brand-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Painel Flutuante de Informações (Solid Premium Card) */}
-          <motion.div
-            initial={{ opacity: 0, y: 40, rotate: 0 }}
-            animate={{ opacity: 1, y: 0, rotate: 1 }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="glow-card p-6 md:p-8 rounded-3xl w-full max-w-[360px] relative"
+            className="space-y-8 w-full"
           >
-            {/* Linha decorativa verde sutil */}
-            <div className="h-[2px] w-12 bg-brand-glow/40 rounded-full mb-6" />
+            <div>
+              <span className="font-mono text-xs text-brand-glow/80 uppercase tracking-[0.2em] block mb-3">POSICIONAMENTO</span>
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+                Design proprietário, soluções digitais sob medida.
+              </h2>
+            </div>
             
-            <h3 className="font-display text-lg font-bold text-white mb-6 border-b border-white/5 pb-3">
-              Diferenciais das Soluções
-            </h3>
-            
-            <div className="space-y-4 text-left">
-              <div className="border-b border-white/5 pb-3 flex justify-between items-center">
-                <div>
-                  <span className="text-[10px] text-white/60 uppercase tracking-widest block mb-0.5">Tempo de Atendimento</span>
-                  <span className="text-sm font-semibold text-white/95">Respostas imediatas</span>
-                </div>
-                <span className="text-[11px] font-mono font-semibold text-brand-glow bg-brand-glow/10 px-2 py-0.5 rounded border border-brand-glow/20">Tempo real</span>
-              </div>
-              
-              <div className="border-b border-white/5 pb-3">
-                <span className="text-[10px] text-white/60 uppercase tracking-widest block mb-0.5">Disponibilidade</span>
-                <span className="text-sm font-semibold text-white/90">24 horas, todos os dias</span>
-              </div>
-              
-              <div className="border-b border-white/5 pb-3">
-                <span className="text-[10px] text-white/60 uppercase tracking-widest block mb-0.5">Segurança</span>
-                <span className="text-sm font-semibold text-white/90">Total privacidade de dados</span>
-              </div>
-              
+            <p className="font-sans text-sm md:text-base text-foreground/60 leading-relaxed">
+              Não utilizamos templates pré-prontos ou scaffolds genéricos. Cada projeto comercial é pensado exclusivamente para transmitir a máxima autoridade e credibilidade ao seu negócio.
+            </p>
+
+            <div className="pt-8 border-t border-black/5 grid grid-cols-2 gap-6 w-full">
               <div>
-                <span className="text-[10px] text-white/60 uppercase tracking-widest block mb-0.5">Design do Site</span>
-                <span className="text-sm font-semibold text-brand-glow">100% autoral e sob medida</span>
+                <span className="font-display text-3xl md:text-4xl font-bold text-foreground block">100%</span>
+                <span className="font-sans text-[10px] text-foreground/40 uppercase tracking-widest mt-2 block">Código Autoral</span>
+              </div>
+              <div>
+                <span className="font-display text-3xl md:text-4xl font-bold text-foreground block">&lt; 1.2s</span>
+                <span className="font-sans text-[10px] text-foreground/40 uppercase tracking-widest mt-2 block">Tempo de Resposta</span>
               </div>
             </div>
-
-            {/* Decorador gráfico sutil no canto do painel */}
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 border-b border-r border-white/10 rounded-br-2xl pointer-events-none" />
           </motion.div>
-
-          {/* Elemento de fundo geométrico sutil atrás do painel */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] bg-brand-glow/[0.015] border border-brand-glow/5 rounded-full pointer-events-none z-0" />
         </div>
 
       </div>
@@ -152,7 +108,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25 text-[10px] font-mono tracking-widest z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/30 text-[10px] font-mono tracking-widest z-10"
       >
         <span className="animate-bounce">ROLE PARA DESCUBRIR</span>
       </motion.div>

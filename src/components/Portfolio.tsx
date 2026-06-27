@@ -18,12 +18,12 @@ export default function Portfolio() {
   const projects: Project[] = [
     {
       id: "jr-performance",
-      title: "JR Performance",
+      title: "JF Performance",
       description: "Landing page de altíssimo padrão criada para assessoria esportiva e consultoria de treinamento de alta performance. Layout focado em conversão e apelo visual premium.",
-      url: "https://jr-performance.vercel.app/",
+      url: "https://jf-performance.vercel.app/",
       domain: "jr-performance.vercel.app",
-      pcImage: "/jfmobile.png",
-      mobileImage: "/jfpc.png",
+      pcImage: "/jfpc.png",
+      mobileImage: "/jfmobile.png",
       tags: ["Design Exclusivo", "Carregamento Rápido", "Alta Conversão", "SEO"]
     },
     {
@@ -77,7 +77,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="projetos" className="relative py-24 md:py-32 px-6 bg-black z-10 border-t border-white/5 w-full overflow-hidden">
+    <section id="projetos" className="relative py-24 md:py-32 px-6 bg-[#f5f1ea] z-10 border-t border-black/5 w-full overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-glow/[0.015] rounded-full blur-[140px] pointer-events-none" />
 
@@ -90,13 +90,13 @@ export default function Portfolio() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center max-w-3xl mx-auto mb-20 md:mb-28"
         >
-          <span className="text-[10px] font-bold tracking-wider text-brand-glow bg-brand-glow/10 px-3 py-1 rounded-full border border-brand-glow/20 uppercase">
-            Portfólio & Provas
+          <span className="text-[10px] font-bold tracking-[0.2em] text-brand-glow bg-brand-glow/10 px-3.5 py-1 rounded-full border border-brand-glow/20 uppercase">
+            Estudos de Caso
           </span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight mt-6">
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight mt-6">
             Projetos reais entregues com <span className="font-serif italic text-brand-glow font-normal">design exclusivo</span> e alta performance.
           </h2>
-          <p className="font-sans text-white/70 text-base md:text-lg mt-4">
+          <p className="font-sans text-foreground/70 text-base md:text-lg mt-4">
             Veja as estruturas de alto padrão que desenvolvemos para colocar marcas B2B e prestadores de serviços no topo do mercado.
           </p>
         </motion.div>
@@ -118,13 +118,13 @@ export default function Portfolio() {
               >
                 {/* Info Column */}
                 <div className="w-full lg:w-5/12 flex flex-col items-start">
-                  <span className="font-mono text-xs text-brand-glow/70 mb-3 tracking-widest uppercase">
-                    PROJETO 0{index + 1}
+                  <span className="font-mono text-[10px] text-brand-glow/70 mb-3 tracking-[0.25em] uppercase">
+                    CASO DE ESTUDO 0{index + 1}
                   </span>
-                  <h3 className="font-display text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                  <h3 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
                     {project.title}
                   </h3>
-                  <p className="font-sans text-white/70 text-sm md:text-base leading-relaxed mb-6">
+                  <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed mb-6">
                     {project.description}
                   </p>
 
@@ -133,7 +133,7 @@ export default function Portfolio() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] font-medium tracking-wider text-white/60 bg-white/5 border border-white/10 px-2.5 py-1 rounded-md"
+                        className="text-[10px] font-medium tracking-wider text-foreground/70 bg-black/[0.03] border border-black/5 px-2.5 py-1 rounded-md"
                       >
                         {tag}
                       </span>
@@ -145,7 +145,7 @@ export default function Portfolio() {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-glow transition-colors duration-300 group"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow border-b border-black/10 hover:border-brand-glow/40 pb-0.5 transition-colors duration-300 group"
                   >
                     <span>Visitar site publicado</span>
                     <svg
@@ -164,21 +164,21 @@ export default function Portfolio() {
                   <div className="relative w-full max-w-[480px] md:max-w-[520px] aspect-[16/11]">
                     
                     {/* Mockup Desktop (Navegador) */}
-                    <div className="absolute right-0 top-0 w-[85%] sm:w-[88%] aspect-[16/10] rounded-xl border border-white/10 bg-[#0d0d0d] overflow-hidden shadow-2xl z-0 group">
+                    <div className="absolute right-0 top-0 w-[85%] sm:w-[88%] aspect-[16/10] rounded-xl border border-black/5 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] z-0 group">
                       {/* Barra do navegador */}
-                      <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#080808] border-b border-white/5 relative z-10">
+                      <div className="flex items-center gap-1.5 px-4 py-2.5 bg-black/[0.02] border-b border-black/5 relative z-10">
                         <div className="flex gap-1.5">
-                          <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                          <div className="w-2 h-2 rounded-full bg-black/10" />
+                          <div className="w-2 h-2 rounded-full bg-black/10" />
+                          <div className="w-2 h-2 rounded-full bg-black/10" />
                         </div>
-                        <div className="absolute left-1/2 -translate-x-1/2 text-[9px] font-mono text-white/35 tracking-wider truncate max-w-[180px] md:max-w-xs">
+                        <div className="absolute left-1/2 -translate-x-1/2 text-[9px] font-mono text-foreground/40 tracking-wider truncate max-w-[180px] md:max-w-xs">
                           {project.domain}
                         </div>
                       </div>
                       
                       {/* Conteúdo do Site (Imagem estática encaixada) */}
-                      <div className="relative w-full h-[calc(100%-35px)] overflow-hidden bg-[#070707]">
+                      <div className="relative w-full h-[calc(100%-35px)] overflow-hidden bg-black/[0.02]">
                         <Image
                           src={project.pcImage}
                           alt={`${project.title} Desktop`}
@@ -189,17 +189,10 @@ export default function Portfolio() {
                       </div>
                     </div>
 
-                    {/* Mockup Mobile (Celular 3D) */}
-                    <div className="absolute left-0 bottom-0 w-[26%] sm:w-[25%] aspect-[9/18.5] rounded-[2rem] border-[4px] border-white/12 bg-black overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-10 group/mobile">
-                      {/* Notch do celular */}
-                      <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-[40%] h-3 bg-black rounded-full z-20" />
-                      {/* Alto-falante e câmera sutil */}
-                      <div className="absolute top-2 left-[45%] w-1.5 h-1 bg-white/10 rounded-full z-30" />
-                      {/* Indicador de home */}
-                      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1/3 h-0.5 bg-white/20 rounded-full z-20" />
-                      
+                    {/* Mockup Mobile (Celular Slim Moderno) */}
+                    <div className="absolute left-0 bottom-0 w-[26%] sm:w-[25%] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.08)] z-10">
                       {/* Conteúdo do Site Mobile (Imagem estática encaixada) */}
-                      <div className="relative w-full h-full overflow-hidden bg-black rounded-[1.8rem]">
+                      <div className="relative w-full h-full overflow-hidden bg-black/[0.02] rounded-[1.4rem]">
                         <Image
                           src={project.mobileImage}
                           alt={`${project.title} Mobile`}
