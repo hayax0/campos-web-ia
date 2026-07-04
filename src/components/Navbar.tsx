@@ -81,8 +81,6 @@ export default function Navbar() {
     }, 150);
   };
 
-  const whatsappUrl = "https://wa.me/5521997411009?text=Oi%20Caio%2C%20gostaria%20de%20uma%20an%C3%A1lise%20estrat%C3%A9gica%20para%20minha%20empresa";
-
   return (
     <>
       <motion.header
@@ -143,17 +141,8 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop CTA Button */}
-        <div className="hidden lg:block">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsapp-glow-button inline-flex items-center justify-center bg-brand-glow/10 text-brand-glow border border-brand-glow/30 hover:bg-brand-glow hover:text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-[0_4px_12px_rgba(20,160,100,0.15)]"
-          >
-            Falar com Especialista
-          </a>
-        </div>
+        {/* Desktop CTA Spacer to keep menu centered */}
+        <div className="hidden lg:block w-36" />
 
         {/* Mobile Menu Button (Hamburger) - Visible below 1024px */}
         <button

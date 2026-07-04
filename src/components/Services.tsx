@@ -155,9 +155,7 @@ export default function Services() {
                     {/* Action Link */}
                     <div className="pt-6 border-t border-black/5 w-full">
                       <a
-                        href={`https://wa.me/5521997411009?text=Oi%20Caio%2C%20gostaria%20de%20saber%20mais%20detalhes%20sobre%20a%20solu%C3%A7%C3%A3o%20de%20${encodeURIComponent(service.title)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="#planos"
                         className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow transition-colors duration-300 group group-hover:text-brand-glow"
                       >
                         <span>Solicitar esta solução</span>

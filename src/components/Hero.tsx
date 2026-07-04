@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const whatsappUrl = "https://wa.me/5521997411009?text=Oi%20Caio%2C%20quero%20uma%20an%C3%A1lise%20estrat%C3%A9gica%20do%20meu%20neg%C3%B3cio";
-
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-24 px-6 overflow-hidden bg-radial-glow w-full">
       {/* Background Tech Grid */}
@@ -52,14 +50,6 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="whatsapp-glow-button w-full sm:w-auto px-8 py-4 bg-brand-glow text-white font-semibold rounded-full text-sm text-center shadow-[0_4px_14px_rgba(20,160,100,0.15)] hover:shadow-[0_6px_20px_rgba(20,160,100,0.25)] transition-all duration-300 hover:bg-brand-glow/90"
-            >
-              Conversar no WhatsApp
-            </a>
             <a
               href="#servicos"
               className="w-full sm:w-auto px-8 py-4 bg-transparent border border-foreground/15 text-foreground font-semibold rounded-full text-sm transition-all duration-300 hover:bg-foreground/[0.03] hover:border-foreground/25 text-center shadow-[0_4px_12px_rgba(0,0,0,0.01)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.03)]"

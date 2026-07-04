@@ -9,6 +9,7 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function Home() {
   return (
@@ -46,6 +47,9 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppFloat />
     </div>
     </SmoothScroll>
   );

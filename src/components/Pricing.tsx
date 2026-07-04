@@ -4,8 +4,6 @@ import { motion, Variants } from "framer-motion";
 
 interface PlanItem {
   name: string;
-  price: string;
-  period: string;
   paymentTerms: string;
   deliveryTime: string;
   description: string;
@@ -26,8 +24,6 @@ export default function Pricing() {
   const plans: PlanItem[] = [
     {
       name: "Plano Site Profissional",
-      price: "R$ 540,90",
-      period: "Pagamento único",
       paymentTerms: "50% de sinal e 50% na entrega",
       deliveryTime: "2 semanas",
       description: "Ideal para profissionais e empresas que precisam de um site de alta credibilidade para atrair clientes das pesquisas na internet.",
@@ -39,14 +35,12 @@ export default function Pricing() {
         "Funcionamento perfeito em qualquer celular",
         "Velocidade máxima de carregamento"
       ],
-      ctaText: "Garantir Meu Site",
-      whatsappMessage: "Oi Caio, quero contratar o Plano Site Profissional por R$ 540,90",
+      ctaText: "Solicitar Orçamento",
+      whatsappMessage: "Oi Caio, gostaria de solicitar um orçamento para o Plano Site Profissional.",
       popular: false
     },
     {
       name: "Plano Completo com Atendimento",
-      price: "R$ 1.150,90",
-      period: "+ mensalidade de infraestrutura",
       paymentTerms: "50% de sinal e 50% na entrega",
       deliveryTime: "9 a 14 semanas",
       description: "A solução comercial definitiva. Seu site profissional funcionando integrado ao atendimento por mensagens no WhatsApp.",
@@ -58,8 +52,8 @@ export default function Pricing() {
         "Simplificação das fases do seu atendimento",
         "Suporte completo para manter tudo funcionando"
       ],
-      ctaText: "Garantir Atendimento Automático",
-      whatsappMessage: "Oi Caio, quero automatizar meu negócio com o Plano Completo por R$ 1.150,90",
+      ctaText: "Solicitar Orçamento",
+      whatsappMessage: "Oi Caio, gostaria de solicitar um orçamento para o Plano Completo com Atendimento.",
       popular: true
     }
   ];
@@ -161,12 +155,9 @@ export default function Pricing() {
 
                 {/* Plan Price */}
                 <div className="mb-6">
-                  <span className="font-display text-4xl md:text-5xl font-bold text-foreground">
-                    {plan.price}
-                  </span>
-                  <p className="font-sans text-xs text-foreground/45 mt-1">
-                    {plan.period}
-                  </p>
+                  <div className="font-display text-3xl font-bold text-foreground tracking-tight">
+                    Sob consulta
+                  </div>
                   <div className="mt-4 space-y-2">
                     <div className="flex items-center gap-1.5 text-xs text-brand-glow/90 font-medium">
                       <svg className="w-4 h-4 text-brand-glow/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">

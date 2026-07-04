@@ -11,8 +11,6 @@ export default function CTASection() {
     mensagem: "",
   });
 
-  const whatsappDirectUrl = "https://wa.me/5521997411009?text=Oi%20Caio%2C%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20estrat%C3%A9gica";
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.nome || !formData.mensagem) {

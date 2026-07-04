@@ -9,25 +9,13 @@ export default function Footer() {
     <footer className="relative bg-[#0b1310] z-10 border-t border-white/[0.06] pt-20 pb-12 px-6 bg-radial-bottom-glow w-full overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
         {/* Bloco Superior: Chamada de Display Editorial */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-16 items-start">
-          <div className="lg:col-span-8">
-            <span className="font-mono text-xs text-brand-glow/90 uppercase tracking-[0.25em] block mb-4">
-              PROJETO EXCLUSIVO
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-[-0.03em] leading-none mb-6">
-              Vamos construir a presença digital que sua empresa merece?
-            </h2>
-          </div>
-          <div className="lg:col-span-4 flex lg:justify-end lg:pt-8">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-brand-glow text-white font-semibold rounded-full text-sm text-center shadow-[0_4px_14px_rgba(20,160,100,0.15)] hover:shadow-[0_6px_20px_rgba(20,160,100,0.25)] transition-all duration-300 hover:bg-brand-glow/90 whatsapp-glow-button"
-            >
-              Iniciar Análise Estratégica
-            </a>
-          </div>
+        <div className="pb-16">
+          <span className="font-mono text-xs text-brand-glow/90 uppercase tracking-[0.25em] block mb-4">
+            PROJETO EXCLUSIVO
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-[-0.03em] leading-none max-w-4xl">
+            Vamos construir a presença digital que sua empresa merece?
+          </h2>
         </div>
 
         {/* Linha Divisória Fina */}

@@ -142,24 +142,7 @@ export default function FAQ() {
           })}
         </motion.div>
 
-        {/* Action Link for further questions */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mt-12 text-sm text-foreground/50"
-        >
-          Ainda tem dúvidas sobre o processo?{" "}
-          <a
-            href="https://wa.me/5521997411009?text=Oi%20Caio%2C%20tenho%20uma%20duvida%20sobre%20o%20funcionamento"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-brand-glow hover:underline font-semibold"
-          >
-            Falar diretamente comigo no WhatsApp
-          </a>
-        </motion.div>
+
       </div>
     </section>
   );
