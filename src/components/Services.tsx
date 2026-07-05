@@ -15,28 +15,28 @@ export default function Services() {
   const services: Service[] = [
     {
       id: "vitrine",
-      badge: "PRESENÇA & CREDIBILIDADE",
-      roleName: "Site Exclusivo",
-      title: "Sites Exclusivos de Alta Velocidade",
-      description: "Sites construídos do zero para aumentar a confiança do seu cliente, destacar sua marca e transformar visitantes em contatos reais.",
+      badge: "VENDAS & AUTORIDADE",
+      roleName: "Presença Digital",
+      title: "Sites de Alta Performance Focados em Vendas",
+      description: "Resolvemos o problema da falta de presença digital ou de sites lentos e amadores que afastam compradores. Entregamos uma estrutura rápida que conquista a confiança do cliente imediatamente e facilita o fechamento de novos negócios.",
       features: [
-        "Design personalizado para o seu negócio (zero modelos prontos)",
-        "Carregamento imediato que retém a atenção do visitante",
-        "Estruturado para ser encontrado em pesquisas no Google",
-        "Botão que direciona o cliente direto para o seu WhatsApp"
+        "Desenvolvido do zero sob medida para destacar sua marca (zero modelos prontos)",
+        "Velocidade máxima de carregamento para manter o cliente em sua página",
+        "Estruturado com as melhores práticas de SEO para ser encontrado no Google",
+        "Pontos de conversão inteligentes que direcionam o lead qualificado para seu WhatsApp"
       ]
     },
     {
       id: "automacao",
-      badge: "ATENDIMENTO & EFICIÊNCIA",
-      roleName: "Atendimento Automático",
-      title: "Atendimento Comercial Automatizado",
-      description: "Um sistema que atende seus clientes imediatamente no WhatsApp, responde dúvidas comuns e organiza seus contatos sem parar.",
+      badge: "ATENDIMENTO & PRODUTIVIDADE",
+      roleName: "Automação Comercial",
+      title: "Automação Inteligente de Vendas no WhatsApp",
+      description: "Eliminamos a perda de clientes por demora no atendimento. Desenvolvemos um sistema inteligente que responde mensagens instantaneamente, tira dúvidas frequentes e filtra os leads qualificados 24 horas por dia.",
       features: [
-        "Atendimento automático 24 horas por dia, 7 dias por semana",
-        "Triagem automática para separar curiosos de compradores",
-        "Organização simples dos contatos e oportunidades recebidas",
-        "Redução drástica de tempo digitando as mesmas mensagens"
+        "Atendimento imediato a qualquer momento do dia ou da noite",
+        "Filtro inteligente para separar clientes prontos para comprar de curiosos",
+        "Economia de tempo de digitação repetitiva de sua equipe comercial",
+        "Organização e encaminhamento automático de contatos interessados"
       ]
     }
   ];
@@ -76,10 +76,10 @@ export default function Services() {
             className="max-w-3xl mb-16 md:mb-24"
           >
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
-              Construímos o <span className="font-serif italic text-brand-glow font-normal">posicionamento</span> e o atendimento que sua empresa precisa.
+              Soluções inteligentes focadas em <span className="font-serif italic text-brand-glow font-normal">vendas</span> e eficiência comercial.
             </h2>
             <p className="font-sans text-foreground/70 text-base md:text-lg mt-4 max-w-2xl">
-              Unimos design exclusivo com atendimento automatizado para acelerar as vendas do seu negócio.
+              Ajudamos sua empresa a atrair mais clientes qualificados e reduzir o trabalho manual de atendimento com tecnologia sob medida.
             </p>
           </motion.div>
 

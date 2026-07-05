@@ -19,7 +19,7 @@ export default function Portfolio() {
     {
       id: "jr-performance",
       title: "JF Performance",
-      description: "Landing page de altíssimo padrão criada para assessoria esportiva e consultoria de treinamento de alta performance. Layout focado em conversão e apelo visual premium.",
+      description: "Desenvolvimento de landing page de altíssimo padrão para assessoria de treinamento de alta performance. Layout focado em conversão e apelo visual premium, gerando novos contatos comerciais qualificados.",
       url: "https://jf-performance.vercel.app/",
       domain: "jr-performance.vercel.app",
       pcImage: "/jfpc.png",
@@ -29,17 +29,17 @@ export default function Portfolio() {
     {
       id: "futevolei-mourisco",
       title: "Futevôlei Mourisco",
-      description: "Estrutura digital vibrante e dinâmica desenvolvida para uma das arenas de futevôlei mais tradicionais do Rio. Foco em expor horários, turmas e facilitar reservas.",
+      description: "Estrutura digital vibrante e dinâmica desenvolvida para uma das arenas de futevôlei mais tradicionais do Rio de Janeiro. Otimizado para reservas rápidas e exposição da grade de aulas direto no WhatsApp.",
       url: "https://futevolei-mourisco.vercel.app/",
       domain: "futevolei-mourisco.vercel.app",
       pcImage: "/mouriscopc.png",
       mobileImage: "/mouriscomobile.png",
-      tags: ["Esportes & Lazer", "Grade Otimizada", "Integração WhatsApp", "Mobile First"]
+      tags: ["Grade Otimizada", "Integração WhatsApp", "Mobile First", "Esportes"]
     },
     {
       id: "studio-freitas-fisio",
       title: "Studio Freitas Fisio",
-      description: "Visual clean e sofisticado desenvolvido sob medida para um estúdio de fisioterapia, pilates e reabilitação física de elite. Transmite credibilidade e acolhimento imediato.",
+      description: "Site institucional clean e sofisticado desenvolvido sob medida para estúdio de fisioterapia de elite. Criado para transmitir autoridade clínica e facilitar o agendamento de avaliações de novos pacientes.",
       url: "https://studio-freitas-fisio.vercel.app/",
       domain: "studio-freitas-fisio.vercel.app",
       pcImage: "/fisiopc.png",
@@ -49,12 +49,32 @@ export default function Portfolio() {
     {
       id: "tozza-pet",
       title: "Tozza Pet",
-      description: "Plataforma amigável e moderna criada para clínica veterinária e petshop. Organização de serviços, especialidades médicas e agendamento rápido de consultas.",
+      description: "Plataforma amigável e moderna desenvolvida para clínica veterinária de alto padrão. Otimização da jornada do cliente para facilidade de agendamento de consultas e exibição de especialidades.",
       url: "https://tozzapet.vercel.app/",
       domain: "tozzapet.vercel.app",
       pcImage: "/tozzapc.png",
       mobileImage: "/tozzamobile.png",
       tags: ["Pet Care", "Agendamento Ágil", "Layout Amigável", "Acessibilidade"]
+    },
+    {
+      id: "conversao-barber",
+      title: "Blinder's Barbershop (Validação Comercial)",
+      description: "Direcionamento estratégico de fluxo. Identificamos que o cliente tinha foco apenas em redes sociais, estruturando um canal direto de atração e convertendo o interesse em reuniões comerciais imediatas.",
+      url: "#contato",
+      domain: "whatsapp.com",
+      pcImage: "",
+      mobileImage: "/conversao_barber.jpg",
+      tags: ["Prospecção Direta", "Conversão Comercial", "WhatsApp Ativo"]
+    },
+    {
+      id: "conversao-pix",
+      title: "Beleza Alma Canina (Comprovação Comercial)",
+      description: "Fechamento de projeto de alta conversão. Desenvolvimento e entrega de solução comercial ágil, com comprovação direta de retorno financeiro e satisfação do cliente na jornada de compra.",
+      url: "#contato",
+      domain: "whatsapp.com",
+      pcImage: "",
+      mobileImage: "/conversao_pix.jpg",
+      tags: ["Geração de Receita", "Retorno de Investimento", "Validação Financeira"]
     }
   ];
 
@@ -94,10 +114,10 @@ export default function Portfolio() {
             Estudos de Caso
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight mt-6">
-            Projetos reais entregues com <span className="font-serif italic text-brand-glow font-normal">design exclusivo</span> e alta performance.
+            Cases de sucesso que combinam <span className="font-serif italic text-brand-glow font-normal">design exclusivo</span> e conversão real.
           </h2>
           <p className="font-sans text-foreground/70 text-base md:text-lg mt-4">
-            Veja as estruturas de alto padrão que desenvolvemos para colocar marcas B2B e prestadores de serviços no topo do mercado.
+            Confira as soluções comerciais e de presença digital de alto padrão que desenvolvemos para destacar marcas e gerar resultados financeiros reais.
           </p>
         </motion.div>
 
@@ -141,69 +161,101 @@ export default function Portfolio() {
                   </div>
 
                   {/* Link CTA */}
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow border-b border-black/10 hover:border-brand-glow/40 pb-0.5 transition-colors duration-300 group"
-                  >
-                    <span>Visitar site publicado</span>
-                    <svg
-                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  {project.url.startsWith('#') ? (
+                    <a
+                      href={project.url}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow border-b border-black/10 hover:border-brand-glow/40 pb-0.5 transition-colors duration-300 group"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+                      <span>Quero descobrir oportunidades</span>
+                      <svg
+                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow border-b border-black/10 hover:border-brand-glow/40 pb-0.5 transition-colors duration-300 group"
+                    >
+                      <span>Visitar site publicado</span>
+                      <svg
+                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
 
                 {/* Mockups Column */}
                 <div className="w-full lg:w-7/12 flex items-center justify-center relative">
-                  <div className="relative w-full max-w-[480px] md:max-w-[520px] aspect-[16/11]">
-                    
-                    {/* Mockup Desktop (Navegador) */}
-                    <div className="absolute right-0 top-0 w-[85%] sm:w-[88%] aspect-[16/10] rounded-xl border border-black/5 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] z-0 group">
-                      {/* Barra do navegador */}
-                      <div className="flex items-center gap-1.5 px-4 py-2.5 bg-black/[0.02] border-b border-black/5 relative z-10">
-                        <div className="flex gap-1.5">
-                          <div className="w-2 h-2 rounded-full bg-black/10" />
-                          <div className="w-2 h-2 rounded-full bg-black/10" />
-                          <div className="w-2 h-2 rounded-full bg-black/10" />
-                        </div>
-                        <div className="absolute left-1/2 -translate-x-1/2 text-[9px] font-mono text-foreground/40 tracking-wider truncate max-w-[180px] md:max-w-xs">
-                          {project.domain}
-                        </div>
-                      </div>
+                  {project.pcImage ? (
+                    <div className="relative w-full max-w-[480px] md:max-w-[520px] aspect-[16/11]">
                       
-                      {/* Conteúdo do Site (Imagem estática encaixada) */}
-                      <div className="relative w-full h-[calc(100%-35px)] overflow-hidden bg-black/[0.02]">
-                        <Image
-                          src={project.pcImage}
-                          alt={`${project.title} Desktop`}
-                          fill
-                          unoptimized
-                          className="object-cover object-top"
-                        />
+                      {/* Mockup Desktop (Navegador) */}
+                      <div className="absolute right-0 top-0 w-[85%] sm:w-[88%] aspect-[16/10] rounded-xl border border-black/5 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] z-0 group">
+                        {/* Barra do navegador */}
+                        <div className="flex items-center gap-1.5 px-4 py-2.5 bg-black/[0.02] border-b border-black/5 relative z-10">
+                          <div className="flex gap-1.5">
+                            <div className="w-2 h-2 rounded-full bg-black/10" />
+                            <div className="w-2 h-2 rounded-full bg-black/10" />
+                            <div className="w-2 h-2 rounded-full bg-black/10" />
+                          </div>
+                          <div className="absolute left-1/2 -translate-x-1/2 text-[9px] font-mono text-foreground/40 tracking-wider truncate max-w-[180px] md:max-w-xs">
+                            {project.domain}
+                          </div>
+                        </div>
+                        
+                        {/* Conteúdo do Site (Imagem estática encaixada) */}
+                        <div className="relative w-full h-[calc(100%-35px)] overflow-hidden bg-black/[0.02]">
+                          <Image
+                            src={project.pcImage}
+                            alt={`${project.title} Desktop`}
+                            fill
+                            unoptimized
+                            className="object-cover object-top"
+                          />
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Mockup Mobile (Celular Slim Moderno) */}
-                    <div className="absolute left-0 bottom-0 w-[26%] sm:w-[25%] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.08)] z-10">
-                      {/* Conteúdo do Site Mobile (Imagem estática encaixada) */}
+                      {/* Mockup Mobile (Celular Slim Moderno) */}
+                      <div className="absolute left-0 bottom-0 w-[26%] sm:w-[25%] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.08)] z-10">
+                        {/* Conteúdo do Site Mobile (Imagem estática encaixada) */}
+                        <div className="relative w-full h-full overflow-hidden bg-black/[0.02] rounded-[1.4rem]">
+                          <Image
+                            src={project.mobileImage}
+                            alt={`${project.title} Mobile`}
+                            fill
+                            unoptimized
+                            className="object-cover object-top"
+                          />
+                        </div>
+                      </div>
+
+                    </div>
+                  ) : (
+                    /* Mockup Mobile Centralizado e Maior para Prints */
+                    <div className="relative w-[50%] max-w-[260px] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_25px_50px_rgba(0,0,0,0.12)] z-10">
                       <div className="relative w-full h-full overflow-hidden bg-black/[0.02] rounded-[1.4rem]">
                         <Image
                           src={project.mobileImage}
-                          alt={`${project.title} Mobile`}
+                          alt={`${project.title} Prova de Conversão`}
                           fill
                           unoptimized
-                          className="object-cover object-top"
+                          className="object-contain object-top"
                         />
                       </div>
                     </div>
-
-                  </div>
+                  )}
                 </div>
 
               </motion.div>

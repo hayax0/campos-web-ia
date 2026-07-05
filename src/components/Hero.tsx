@@ -21,16 +21,14 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Coluna Esquerda: Conteúdo de Texto e CTAs (Alinhamento editorial esquerdo) */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left w-full">
-          {/* Headline (Editorial style combining Display & Serif Italic font) */}
+        <div className="lg:col-span-7 flex flex-col items-start text-left w-full">          {/* Headline (Editorial style combining Display & Serif Italic font) */}
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-[-0.03em] text-foreground leading-[1.05] mb-6 text-balance"
           >
-            Coloque sua empresa na internet com o{" "}
-            <span className="font-serif italic font-normal text-brand-glow">visual</span> que ela merece e nunca mais perca oportunidades.
+            Sua empresa pode estar <span className="font-serif italic font-normal text-brand-glow">perdendo clientes</span> todos os dias sem perceber.
           </motion.h1>
 
           {/* Subheadline */}
@@ -40,7 +38,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="font-sans text-sm sm:text-base md:text-lg text-foreground/70 max-w-[60ch] leading-relaxed mb-10 text-pretty"
           >
-            Construímos sites rápidos e sistemas de atendimento automatizado no WhatsApp. O posicionamento de credibilidade que seu negócio precisa para atrair e qualificar clientes todos os dias.
+            Desenvolvemos sites de alta velocidade, automações de atendimento e soluções inteligentes sob medida para ajudar sua empresa a vender mais, ganhar credibilidade e economizar tempo.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -51,10 +49,16 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
             <a
+              href="#contato"
+              className="w-full sm:w-auto px-8 py-4 bg-brand-glow text-white font-semibold rounded-full text-sm transition-all duration-300 hover:bg-brand-glow/90 text-center shadow-[0_4px_14px_rgba(20,160,100,0.15)] hover:shadow-[0_6px_20px_rgba(20,160,100,0.25)] whatsapp-glow-button"
+            >
+              Quero descobrir oportunidades
+            </a>
+            <a
               href="#servicos"
               className="w-full sm:w-auto px-8 py-4 bg-transparent border border-foreground/15 text-foreground font-semibold rounded-full text-sm transition-all duration-300 hover:bg-foreground/[0.03] hover:border-foreground/25 text-center shadow-[0_4px_12px_rgba(0,0,0,0.01)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.03)]"
             >
-              Ver Serviços
+              Conhecer nossas soluções
             </a>
           </motion.div>
         </div>
@@ -68,24 +72,24 @@ export default function Hero() {
             className="space-y-8 w-full"
           >
             <div>
-              <span className="font-mono text-xs text-brand-glow/80 uppercase tracking-[0.2em] block mb-3">POSICIONAMENTO</span>
+              <span className="font-mono text-xs text-brand-glow/80 uppercase tracking-[0.2em] block mb-3">RESULTADO COMERCIAL</span>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
-                Design proprietário, soluções digitais sob medida.
+                Sua empresa gerando oportunidades 24 horas por dia.
               </h2>
             </div>
             
             <p className="font-sans text-sm md:text-base text-foreground/60 leading-relaxed">
-              Não utilizamos templates pré-prontos ou scaffolds genéricos. Cada projeto comercial é pensado exclusivamente para transmitir a máxima autoridade e credibilidade ao seu negócio.
+              Não criamos apenas sites bonitos. Desenvolvemos estruturas completas de captação e automação comercial focadas em converter visitantes em clientes pagantes e liberar o tempo de sua equipe.
             </p>
 
             <div className="pt-8 border-t border-black/5 grid grid-cols-2 gap-6 w-full">
               <div>
-                <span className="font-display text-3xl md:text-4xl font-bold text-foreground block">100%</span>
-                <span className="font-sans text-[10px] text-foreground/40 uppercase tracking-widest mt-2 block">Código Autoral</span>
+                <span className="font-display text-3xl md:text-4xl font-bold text-foreground block">24/7</span>
+                <span className="font-sans text-[10px] text-foreground/40 uppercase tracking-widest mt-2 block">Atendimento Ativo</span>
               </div>
               <div>
                 <span className="font-display text-3xl md:text-4xl font-bold text-foreground block">&lt; 1.2s</span>
-                <span className="font-sans text-[10px] text-foreground/40 uppercase tracking-widest mt-2 block">Tempo de Resposta</span>
+                <span className="font-sans text-[10px] text-foreground/40 uppercase tracking-widest mt-2 block">Tempo de Carregamento</span>
               </div>
             </div>
           </motion.div>

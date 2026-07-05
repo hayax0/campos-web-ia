@@ -11,20 +11,36 @@ interface FAQItem {
 export default function FAQ() {
   const faqData: FAQItem[] = [
     {
-      question: "A automação funciona no meu WhatsApp atual?",
-      answer: "Sim, configuramos o atendimento automático direto no seu número atual. Você não perde nenhum contato já existente e não precisa trocar de chip."
+      question: "Quanto custa um projeto?",
+      answer: "Cada projeto é planejado e desenvolvido de forma totalmente exclusiva para as necessidades comerciais do seu negócio. Após realizarmos nosso diagnóstico gratuito, apresentamos uma proposta sob medida com escopo, etapas e investimentos claros."
     },
     {
-      question: "Preciso entender de tecnologia para usar?",
-      answer: "Nenhuma. Eu cuido de todo o trabalho técnico e coloco seu site e seu atendimento automático no ar. Você só precisa receber as mensagens dos clientes prontos para fechar negócio."
+      question: "Existe mensalidade?",
+      answer: "Não cobramos mensalidades obrigatórias pelo desenvolvimento do site ou da automação comercial. Você investe apenas pelo escopo do projeto fechado. Caso necessite de suporte contínuo, manutenção preventiva ou atualizações recorrentes, oferecemos planos de assessoria mensal opcionais."
     },
     {
-      question: "Quanto tempo leva para ficar pronto?",
-      answer: "O Site Profissional é entregue em até 2 semanas após a etapa de planejamento. O ecossistema completo com o atendimento automático no WhatsApp leva de 9 a 14 semanas para ficar pronto e testado."
+      question: "Em quanto tempo fica pronto?",
+      answer: "O prazo varia conforme a complexidade da solução. Sites e landing pages otimizadas para conversão costumam ficar prontos em até 2 semanas após o planejamento inicial. Já os ecossistemas completos com automação de atendimento no WhatsApp levam de 9 a 14 semanas para serem totalmente configurados, integrados e validados."
     },
     {
-      question: "Como o site é criado?",
-      answer: "Desenvolvo cada site do zero, de forma exclusiva. Isso garante que seu site seja muito mais rápido e seguro do que sites comuns feitos em plataformas prontas e lentas."
+      question: "Vocês fazem alterações depois que o site é entregue?",
+      answer: "Sim! Após a conclusão e publicação do projeto, oferecemos um período de garantia com suporte técnico incluso para pequenos ajustes e garantia de funcionamento. Além disso, fornecemos treinamento básico para que você possa alterar textos simples ou, se preferir, oferecemos pacotes de manutenção."
+    },
+    {
+      question: "Como funciona o suporte?",
+      answer: "Nosso suporte é ágil, humanizado e feito diretamente através de WhatsApp e e-mail. Se houver qualquer dúvida técnica ou necessidade de ajuste no funcionamento do site ou da automação, nossa equipe estará pronta para resolver com prioridade."
+    },
+    {
+      question: "Preciso fornecer todo o conteúdo (textos, imagens, etc.)?",
+      answer: "Nós estruturamos toda a copy profissional com foco em vendas e selecionamos ou criamos os recursos de design para o seu site. Se você já possuir fotos reais da sua empresa, equipe ou produtos, nós as utilizaremos para aumentar ainda mais a autenticidade e a credibilidade."
+    },
+    {
+      question: "Vocês hospedam o site?",
+      answer: "Nós auxiliamos na contratação e configuração da hospedagem mais adequada e veloz para o seu projeto, além do registro do domínio (.com.br). Todo o registro é feito em nome e com os dados da sua empresa, garantindo que o seu site e domínio sejam 100% de sua propriedade."
+    },
+    {
+      question: "Posso parcelar o valor do projeto?",
+      answer: "Sim. Facilitamos o pagamento do seu projeto comercial. Normalmente, trabalhamos com uma entrada de 50% para início dos trabalhos e 50% na entrega final, ou oferecemos parcelamento em condições especiais que podem ser acordadas na apresentação do orçamento."
     }
   ];
 

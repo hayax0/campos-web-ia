@@ -37,10 +37,10 @@ export default function Problems() {
           className="max-w-3xl mb-16 md:mb-24"
         >
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
-            Seu negócio está <span className="font-serif italic text-brand-glow font-normal">perdendo</span> clientes silenciosamente todos os dias.
+            Sua empresa está <span className="font-serif italic text-brand-glow font-normal">perdendo dinheiro</span> e oportunidades agora mesmo.
           </h2>
           <p className="font-sans text-foreground/70 text-base md:text-lg mt-4 max-w-2xl">
-            Seu site e seu atendimento são a porta de entrada da sua empresa. Se eles não funcionarem de forma excelente, os potenciais clientes acabam fechando com quem responder mais rápido ou parecer mais profissional.
+            Seu posicionamento digital e a velocidade de resposta determinam se o cliente escolhe você ou o seu concorrente. No mercado atual, a lentidão custa caro.
           </p>
         </motion.div>
 
@@ -72,12 +72,12 @@ export default function Problems() {
             </div>
             <div className="lg:col-span-4">
               <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight">
-                Site lento ou de aparência amadora
+                Seu cliente pesquisa sua empresa antes de entrar em contato
               </h3>
             </div>
             <div className="lg:col-span-6">
               <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed">
-                As pessoas pesquisam sua empresa antes de fechar negócio. Se elas encontrarem um site confuso, lento ou com cara de amador, a sua credibilidade cai na hora. Concorrentes com um posicionamento visual melhor acabam levando o cliente.
+                A imensa maioria dos consumidores pesquisa negócios online antes de fechar uma compra. Se eles encontrarem um site lento, desatualizado ou com cara de amador, a sua credibilidade é destruída e eles fecham com o concorrente.
               </p>
             </div>
           </motion.div>
@@ -102,12 +102,12 @@ export default function Problems() {
             </div>
             <div className="lg:col-span-4">
               <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight">
-                Contatos sem resposta rápida
+                Seu concorrente responde mais rápido que você
               </h3>
             </div>
             <div className="lg:col-span-6">
               <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed">
-                Se um interessado mandar mensagem fora do expediente e você demorar para responder, ele simplesmente manda mensagem para o seu concorrente. Sem um atendimento automático, você perde vendas valiosas toda noite.
+                Se um lead qualificado mandar mensagem fora do expediente ou durante o dia corrido e você demorar para responder, a venda é perdida. O cliente digital não espera: ele compra de quem responder primeiro.
               </p>
             </div>
           </motion.div>
@@ -132,12 +132,12 @@ export default function Problems() {
             </div>
             <div className="lg:col-span-4">
               <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight">
-                Desperdício de tempo em mensagens manuais
+                Sua equipe perde horas valiosas com tarefas repetitivas
               </h3>
             </div>
             <div className="lg:col-span-6">
               <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed">
-                Ficar respondendo às mesmas dúvidas comuns e fazendo anotações manuais gasta horas preciosas do seu dia. Esse tempo deveria ser focado em conversar apenas com leads qualificados e fechar contratos de alto valor.
+                Gastar tempo digitando as mesmas mensagens, enviando apresentações manuais e filtrando curiosos drena a produtividade e o faturamento. O tempo da sua empresa deveria ser focado em fechar negócios prontos e gerar lucro.
               </p>
             </div>
           </motion.div>

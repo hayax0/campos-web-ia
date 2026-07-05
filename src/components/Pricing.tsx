@@ -23,37 +23,37 @@ interface Testimonial {
 export default function Pricing() {
   const plans: PlanItem[] = [
     {
-      name: "Plano Site Profissional",
+      name: "Presença Digital Otimizada",
       paymentTerms: "50% de sinal e 50% na entrega",
       deliveryTime: "2 semanas",
-      description: "Ideal para profissionais e empresas que precisam de um site de alta credibilidade para atrair clientes das pesquisas na internet.",
+      description: "Ideal para empresas que querem dominar as buscas do Google, gerar credibilidade instantânea e converter visitantes em contatos reais.",
       features: [
-        "Site exclusivo e rápido (zero modelos prontos)",
-        "Endereço do site (.com.br) registrado e configurado",
-        "Segurança e privacidade de acordo com a lei",
-        "Botão de contato direto para o seu WhatsApp",
-        "Funcionamento perfeito em qualquer celular",
-        "Velocidade máxima de carregamento"
+        "Site exclusivo planejado para sua taxa de conversão",
+        "Carregamento imediato que evita a perda de clientes",
+        "Configuração completa de domínio e e-mails profissionais",
+        "Pontos de contato estratégicos integrados ao WhatsApp",
+        "Design moderno e otimizado para celulares e computadores",
+        "Código limpo que posiciona sua marca no topo do Google"
       ],
-      ctaText: "Solicitar Orçamento",
-      whatsappMessage: "Oi Caio, gostaria de solicitar um orçamento para o Plano Site Profissional.",
+      ctaText: "Agendar diagnóstico gratuito",
+      whatsappMessage: "Olá! Gostaria de agendar um diagnóstico gratuito para estruturar nossa Presença Digital Otimizada.",
       popular: false
     },
     {
-      name: "Plano Completo com Atendimento",
+      name: "Máquina de Atração & Automação Comercial",
       paymentTerms: "50% de sinal e 50% na entrega",
       deliveryTime: "9 a 14 semanas",
-      description: "A solução comercial definitiva. Seu site profissional funcionando integrado ao atendimento por mensagens no WhatsApp.",
+      description: "A solução comercial definitiva. Sua empresa com posicionamento de alto padrão e atendimento comercial rodando de forma automática 24/7.",
       features: [
-        "Tudo incluso no Plano Site Profissional",
-        "Atendimento automático configurado no seu WhatsApp",
-        "Respostas imediatas para dúvidas comuns 24h por dia",
-        "Organização automática de novos contatos",
-        "Simplificação das fases do seu atendimento",
-        "Suporte completo para manter tudo funcionando"
+        "Tudo incluso na solução de Presença Digital Otimizada",
+        "Atendimento automático configurado no seu WhatsApp comercial",
+        "Respostas imediatas para qualificar e converter novos leads",
+        "Filtro de contatos para economizar horas de digitação manual",
+        "Organização inteligente das oportunidades de vendas",
+        "Suporte completo para manter sua operação vendendo sem parar"
       ],
-      ctaText: "Solicitar Orçamento",
-      whatsappMessage: "Oi Caio, gostaria de solicitar um orçamento para o Plano Completo com Atendimento.",
+      ctaText: "Agendar diagnóstico gratuito",
+      whatsappMessage: "Olá! Gostaria de agendar um diagnóstico gratuito para a solução de Máquina de Atração e Automação Comercial.",
       popular: true
     }
   ];
@@ -113,10 +113,10 @@ export default function Pricing() {
           className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
         >
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
-            Soluções criadas para trazer mais <span className="font-serif italic text-brand-glow font-normal">clientes</span> para você.
+            Soluções planejadas para multiplicar seus <span className="font-serif italic text-brand-glow font-normal">clientes</span> e faturamento.
           </h2>
           <p className="font-sans text-foreground/70 text-base md:text-lg mt-4">
-            Escolha o modelo ideal para o momento atual do seu negócio. Projetos focados em facilidade de uso e atendimento rápido.
+            Escolha a estrutura ideal para a sua empresa crescer. Desenvolvemos cada detalhe com foco em conversão de vendas e agilidade de atendimento.
           </p>
         </motion.div>
 
@@ -250,9 +250,19 @@ export default function Pricing() {
                 <span className="absolute -top-4 left-0 text-6xl font-serif text-brand-glow/10 select-none pointer-events-none">
                   “
                 </span>
-                <p className="font-sans text-foreground/80 text-sm md:text-base leading-relaxed italic mb-8 z-10 pt-4">
-                  {t.text}
-                </p>
+                <div className="pt-4 z-10">
+                  {/* Evaluation Stars */}
+                  <div className="flex items-center gap-1 mb-3 text-amber-500">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="font-sans text-foreground/80 text-sm md:text-base leading-relaxed italic mb-8">
+                    {t.text}
+                  </p>
+                </div>
                 <div>
                   <div className="font-display text-sm font-bold text-foreground">
                     {t.name}

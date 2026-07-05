@@ -14,11 +14,11 @@ export default function CTASection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.nome || !formData.mensagem) {
-      alert("Por favor, preencha pelo menos o seu nome e a sua mensagem ou dúvida.");
+      alert("Por favor, preencha o seu nome e o principal desafio da sua empresa.");
       return;
     }
 
-    const formattedMessage = `Oi Caio, preenchi o formulário de contato do site com uma dúvida!\n\n👤 *Nome:* ${formData.nome}\n✉️ *E-mail:* ${formData.email || "Não informado"}\n💼 *Ramo/Setor da Empresa:* ${formData.nicho || "Não informado"}\n\n💬 *Mensagem / Dúvida:* \n${formData.mensagem}`;
+    const formattedMessage = `Olá, preenchi o formulário de diagnóstico da Campos Web IA!\n\n👤 *Nome:* ${formData.nome}\n✉️ *E-mail:* ${formData.email || "Não informado"}\n💼 *Ramo da Empresa:* ${formData.nicho || "Não informado"}\n\n💬 *Desafio / Dúvida:* \n${formData.mensagem}`;
     
     const whatsappUrl = `https://wa.me/5521997411009?text=${encodeURIComponent(formattedMessage)}`;
     window.open(whatsappUrl, "_blank");
@@ -42,10 +42,10 @@ export default function CTASection() {
           <div>
             {/* Header Form */}
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2 leading-tight text-center">
-              Tem alguma dúvida? Mande uma mensagem
+              Pronto para descobrir o quanto sua empresa pode crescer?
             </h3>
             <p className="font-sans text-foreground/75 text-sm mb-8 leading-relaxed text-center">
-              Preencha os campos abaixo para enviar suas dúvidas direto para o meu WhatsApp e conversarmos.
+              Solicite seu diagnóstico comercial gratuito. Vamos analisar suas oportunidades comerciais digitais e desenhar as soluções sob medida para sua empresa.
             </p>
 
             {/* Form */}
@@ -70,7 +70,7 @@ export default function CTASection() {
                 {/* Email */}
                 <div className="flex flex-col gap-2">
                   <label htmlFor="email" className="text-xs font-semibold text-foreground/80 font-sans">
-                    E-mail
+                    E-mail corporativo
                   </label>
                   <input
                     type="email"
@@ -86,14 +86,14 @@ export default function CTASection() {
               {/* Nicho */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="nicho" className="text-xs font-semibold text-foreground/80 font-sans">
-                  Ramo do seu Negócio
+                  Segmento da sua Empresa
                 </label>
                 <input
                   type="text"
                   id="nicho"
                   value={formData.nicho}
                   onChange={(e) => setFormData({ ...formData, nicho: e.target.value })}
-                  placeholder="Qual a área de atuação da empresa? (ex: Construção, Clínica, Pet Shop)"
+                  placeholder="Qual o ramo da empresa? (ex: Advocacia, Clínica de Estética, Pet Shop)"
                   className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none font-sans"
                 />
               </div>
@@ -101,7 +101,7 @@ export default function CTASection() {
               {/* Mensagem */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="mensagem" className="text-xs font-semibold text-foreground/80 font-sans">
-                  Mensagem ou Dúvida
+                  Qual o principal desafio de vendas ou atendimento da sua empresa hoje?
                 </label>
                 <textarea
                   id="mensagem"
@@ -109,7 +109,7 @@ export default function CTASection() {
                   rows={4}
                   value={formData.mensagem}
                   onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
-                  placeholder="Escreva aqui sua dúvida ou mensagem"
+                  placeholder="Ex: Perdemos leads por demora na resposta no WhatsApp ou nosso site atual não traz visitas qualificadas."
                   className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none resize-none font-sans"
                 />
               </div>
@@ -119,7 +119,7 @@ export default function CTASection() {
                 type="submit"
                 className="w-full py-4 bg-brand-glow text-white font-semibold rounded-xl text-sm transition-all duration-300 hover:bg-brand-glow/90 shadow-[0_4px_14px_rgba(20,160,100,0.15)] hover:shadow-[0_6px_20px_rgba(20,160,100,0.25)] whatsapp-glow-button text-center flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>Enviar para o WhatsApp</span>
+                <span>Solicitar Diagnóstico Gratuito</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
