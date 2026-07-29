@@ -29,12 +29,12 @@ export default function Portfolio() {
     {
       id: "futevolei-mourisco",
       title: "Futevôlei Mourisco",
-      description: "Estrutura digital vibrante e dinâmica desenvolvida para uma das arenas de futevôlei mais tradicionais do Rio de Janeiro. Otimizado para reservas rápidas e exposição da grade de aulas direto no WhatsApp.",
+      description: "Estrutura digital vibrante e dinâmica desenvolvida para uma das arenas de futevôlei mais tradicionais do Rio de Janeiro. Otimizado para exposição da grade de aulas, facilidade de contato e presença digital de alto impacto.",
       url: "https://futevolei-mourisco.vercel.app/",
       domain: "futevolei-mourisco.vercel.app",
       pcImage: "/mouriscopc.png",
       mobileImage: "/mouriscomobile.png",
-      tags: ["Grade Otimizada", "Integração WhatsApp", "Mobile First", "Esportes"]
+      tags: ["Grade Otimizada", "Agendamento Ágil", "Mobile First", "Esportes"]
     },
     {
       id: "studio-freitas-fisio",
@@ -50,8 +50,8 @@ export default function Portfolio() {
       id: "tozza-pet",
       title: "Tozza Pet",
       description: "Plataforma amigável e moderna desenvolvida para clínica veterinária de alto padrão. Otimização da jornada do cliente para facilidade de agendamento de consultas e exibição de especialidades.",
-      url: "https://tozzapet.vercel.app/",
-      domain: "tozzapet.vercel.app",
+      url: "https://tozza-boutique.vercel.app/",
+      domain: "tozza-boutique.vercel.app",
       pcImage: "/tozzapc.png",
       mobileImage: "/tozzamobile.png",
       tags: ["Pet Care", "Agendamento Ágil", "Layout Amigável", "Acessibilidade"]
@@ -59,16 +59,16 @@ export default function Portfolio() {
     {
       id: "conversao-barber",
       title: "Blinder's Barbershop (Validação Comercial)",
-      description: "Direcionamento estratégico de fluxo. Identificamos que o cliente tinha foco apenas em redes sociais, estruturando um canal direto de atração e convertendo o interesse em reuniões comerciais imediatas.",
+      description: "Direcionamento estratégico de fluxo. Identificamos que o cliente tinha foco apenas em redes sociais, estruturando um canal direto de atração digital e convertendo o interesse em reuniões comerciais imediatas.",
       url: "#contato",
-      domain: "whatsapp.com",
+      domain: "prospeccao-digital",
       pcImage: "",
       mobileImage: "/conversao_barber.jpg",
-      tags: ["Prospecção Direta", "Conversão Comercial", "WhatsApp Ativo"]
+      tags: ["Prospecção Direta", "Conversão Comercial", "Atração Digital"]
     },
     {
       id: "conversao-pix",
-      title: "Beleza Alma Canina (Comprovação Comercial)",
+      title: "Tozza Boutique (Comprovação Comercial)",
       description: "Fechamento de projeto de alta conversão. Desenvolvimento e entrega de solução comercial ágil, com comprovação direta de retorno financeiro e satisfação do cliente na jornada de compra.",
       url: "#contato",
       domain: "whatsapp.com",
@@ -97,7 +97,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="projetos" className="relative py-24 md:py-32 px-6 bg-[#f5f1ea] z-10 border-t border-black/5 w-full overflow-hidden">
+    <section id="projetos" className="relative py-28 md:py-36 px-6 bg-[#f5f1ea] z-10 border-t border-black/5 w-full overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-glow/[0.015] rounded-full blur-[140px] pointer-events-none" />
 
@@ -202,7 +202,11 @@ export default function Portfolio() {
                     <div className="relative w-full max-w-[480px] md:max-w-[520px] aspect-[16/11]">
                       
                       {/* Mockup Desktop (Navegador) */}
-                      <div className="absolute right-0 top-0 w-[85%] sm:w-[88%] aspect-[16/10] rounded-xl border border-black/5 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] z-0 group">
+                      <motion.div
+                        className="absolute right-0 top-0 w-[85%] sm:w-[88%] aspect-[16/10] rounded-xl border border-black/5 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] z-0 group"
+                        whileHover={{ y: -6, boxShadow: "0 25px 50px rgba(0,0,0,0.08)" }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      >
                         {/* Barra do navegador */}
                         <div className="flex items-center gap-1.5 px-4 py-2.5 bg-black/[0.02] border-b border-black/5 relative z-10">
                           <div className="flex gap-1.5">
@@ -225,10 +229,14 @@ export default function Portfolio() {
                             className="object-cover object-top"
                           />
                         </div>
-                      </div>
+                      </motion.div>
 
                       {/* Mockup Mobile (Celular Slim Moderno) */}
-                      <div className="absolute left-0 bottom-0 w-[26%] sm:w-[25%] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.08)] z-10">
+                      <motion.div
+                        className="absolute left-0 bottom-0 w-[26%] sm:w-[25%] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.08)] z-10"
+                        whileHover={{ y: -4, scale: 1.02 }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      >
                         {/* Conteúdo do Site Mobile (Imagem estática encaixada) */}
                         <div className="relative w-full h-full overflow-hidden bg-black/[0.02] rounded-[1.4rem]">
                           <Image
@@ -239,12 +247,16 @@ export default function Portfolio() {
                             className="object-cover object-top"
                           />
                         </div>
-                      </div>
+                      </motion.div>
 
                     </div>
                   ) : (
                     /* Mockup Mobile Centralizado e Maior para Prints */
-                    <div className="relative w-[50%] max-w-[260px] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_25px_50px_rgba(0,0,0,0.12)] z-10">
+                    <motion.div
+                      className="relative w-[50%] max-w-[260px] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_25px_50px_rgba(0,0,0,0.12)] z-10"
+                      whileHover={{ y: -6, boxShadow: "0 30px 60px rgba(0,0,0,0.15)" }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    >
                       <div className="relative w-full h-full overflow-hidden bg-black/[0.02] rounded-[1.4rem]">
                         <Image
                           src={project.mobileImage}
@@ -254,7 +266,7 @@ export default function Portfolio() {
                           className="object-contain object-top"
                         />
                       </div>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
 

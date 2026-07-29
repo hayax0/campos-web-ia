@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 export default function WhatsAppFloat() {
-  const whatsappUrl = "https://wa.me/5521997411009?text=Oi%20Caio%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20meu%20projeto.";
+  const whatsappUrl = "https://wa.me/5521997411009?text=Oi%20Caio%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20meu%20projeto%20de%20site%20ou%20software%20com%20IA.";
 
   return (
     <motion.div
@@ -38,7 +38,7 @@ export default function WhatsAppFloat() {
 
         {/* Text colored with brand green */}
         <span className="font-sans text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase text-brand-glow select-none">
-          Faça seu orçamento
+          Fale conosco
         </span>
       </a>
     </motion.div>

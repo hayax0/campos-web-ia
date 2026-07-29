@@ -23,7 +23,7 @@ export default function Problems() {
   };
 
   return (
-    <section id="problemas" className="relative py-24 md:py-32 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
+    <section id="problemas" className="relative py-28 md:py-36 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-[300px] h-[300px] bg-brand-glow/[0.01] rounded-full blur-[100px] pointer-events-none" />
 
@@ -39,12 +39,12 @@ export default function Problems() {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
             Sua empresa está <span className="font-serif italic text-brand-glow font-normal">perdendo dinheiro</span> e oportunidades agora mesmo.
           </h2>
-          <p className="font-sans text-foreground/70 text-base md:text-lg mt-4 max-w-2xl">
-            Seu posicionamento digital e a velocidade de resposta determinam se o cliente escolhe você ou o seu concorrente. No mercado atual, a lentidão custa caro.
+          <p className="font-sans text-foreground/85 text-base md:text-lg mt-4 max-w-2xl">
+            Três problemas silenciosos que estão drenando seus resultados todos os dias e como resolvemos cada um deles.
           </p>
         </motion.div>
 
-        {/* Editorial list of problems */}
+        {/* Problems list */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -52,8 +52,8 @@ export default function Problems() {
           viewport={{ once: true, margin: "-100px" }}
           className="flex flex-col w-full"
         >
-          {/* Linha Divisória Animada */}
-          <motion.div 
+          {/* Divider */}
+          <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -68,22 +68,25 @@ export default function Problems() {
             className="grid grid-cols-1 lg:grid-cols-12 gap-6 py-12 md:py-16 items-start"
           >
             <div className="lg:col-span-2 font-mono text-xs text-brand-glow/80 uppercase tracking-widest pt-1">
-              01 // PRESENÇA
+              01 // CONVERSÃO
             </div>
             <div className="lg:col-span-4">
               <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight">
-                Seu cliente pesquisa sua empresa antes de entrar em contato
+                Um site bonito que não gera oportunidades
               </h3>
             </div>
-            <div className="lg:col-span-6">
-              <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed">
-                A imensa maioria dos consumidores pesquisa negócios online antes de fechar uma compra. Se eles encontrarem um site lento, desatualizado ou com cara de amador, a sua credibilidade é destruída e eles fecham com o concorrente.
+            <div className="lg:col-span-6 space-y-4">
+              <p className="font-sans text-foreground/85 text-sm md:text-base leading-relaxed">
+                Ter um site apenas para &ldquo;marcar presença&rdquo; não paga as contas. Se suas páginas não são encontradas no Google, não carregam em segundos e não conduzem o visitante ao próximo passo, você está pagando por um custo fixo que não traz retorno.
+              </p>
+              <p className="font-sans text-brand-glow text-sm md:text-base font-medium">
+                Solução: sites de alta performance, preparados para SEO, com design focado em conversão e estrutura pronta para receber Agentes de IA.
               </p>
             </div>
           </motion.div>
 
-          {/* Linha Divisória Animada */}
-          <motion.div 
+          {/* Divider */}
+          <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -98,22 +101,25 @@ export default function Problems() {
             className="grid grid-cols-1 lg:grid-cols-12 gap-6 py-12 md:py-16 items-start"
           >
             <div className="lg:col-span-2 font-mono text-xs text-brand-glow/80 uppercase tracking-widest pt-1">
-              02 // COMERCIAL
+              02 // ABANDONO
             </div>
             <div className="lg:col-span-4">
               <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight">
-                Seu concorrente responde mais rápido que você
+                Visitantes entram no seu site e vão embora sem falar com ninguém
               </h3>
             </div>
-            <div className="lg:col-span-6">
-              <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed">
-                Se um lead qualificado mandar mensagem fora do expediente ou durante o dia corrido e você demorar para responder, a venda é perdida. O cliente digital não espera: ele compra de quem responder primeiro.
+            <div className="lg:col-span-6 space-y-4">
+              <p className="font-sans text-foreground/85 text-sm md:text-base leading-relaxed">
+                Mais de 70% dos visitantes deixam um site sem interagir. Sem um atendimento imediato e inteligente, cada lead que chega tem grandes chances de ir embora e comprar do concorrente que respondeu primeiro.
+              </p>
+              <p className="font-sans text-brand-glow text-sm md:text-base font-medium">
+                Solução: um Agente de IA Web que atende, qualifica e captura oportunidades 24 horas por dia, como um vendedor digital que nunca dorme.
               </p>
             </div>
           </motion.div>
 
-          {/* Linha Divisória Animada */}
-          <motion.div 
+          {/* Divider */}
+          <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -132,18 +138,21 @@ export default function Problems() {
             </div>
             <div className="lg:col-span-4">
               <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight">
-                Sua equipe perde horas valiosas com tarefas repetitivas
+                Sua equipe desperdiça horas preciosas com tarefas repetitivas
               </h3>
             </div>
-            <div className="lg:col-span-6">
-              <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed">
-                Gastar tempo digitando as mesmas mensagens, enviando apresentações manuais e filtrando curiosos drena a produtividade e o faturamento. O tempo da sua empresa deveria ser focado em fechar negócios prontos e gerar lucro.
+            <div className="lg:col-span-6 space-y-4">
+              <p className="font-sans text-foreground/85 text-sm md:text-base leading-relaxed">
+                Preencher planilhas manualmente, extrair dados de documentos um por um, gerar relatórios que consomem o dia inteiro. Horas que poderiam ser dedicadas a estratégia, vendas e crescimento viram custo operacional puro.
+              </p>
+              <p className="font-sans text-brand-glow text-sm md:text-base font-medium">
+                Solução: softwares inteligentes que automatizam leitura de documentos, OCR, consolidação de dados e geração de relatórios, sua equipe focando no que realmente importa.
               </p>
             </div>
           </motion.div>
 
-          {/* Linha Divisória Animada */}
-          <motion.div 
+          {/* Divider */}
+          <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-100px" }}

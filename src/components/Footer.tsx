@@ -3,8 +3,6 @@
 import Image from "next/image";
 
 export default function Footer() {
-  const whatsappUrl = "https://wa.me/5521997411009?text=Oi%20Caio%2C%20gostaria%20de%20conversar%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Campos%20Web%20%26%20IA";
-
   return (
     <footer className="relative bg-[#0b1310] z-10 border-t border-white/[0.06] pt-20 pb-12 px-6 bg-radial-bottom-glow w-full overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">

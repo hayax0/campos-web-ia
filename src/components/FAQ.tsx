@@ -11,36 +11,36 @@ interface FAQItem {
 export default function FAQ() {
   const faqData: FAQItem[] = [
     {
+      question: "Como funciona o Agente de IA Web?",
+      answer: "O Agente de IA Web atua diretamente dentro do seu site para atender os visitantes em tempo real. Ele tira dúvidas frequentes sobre seus produtos e serviços, qualifica a intenção de compra do visitante e encaminha os leads aquecidos diretamente para o WhatsApp da sua equipe comercial, 24 horas por dia."
+    },
+    {
+      question: "Que tipos de processos repetitivos minha empresa pode automatizar?",
+      answer: "Desenvolvemos softwares sob medida e automações de processos para eliminar tarefas manuais exaustivas da sua equipe. Isso inclui leitura automática de PDFs e contratos (OCR), preenchimento e consolidação de planilhas, importação e sincronização de dados entre sistemas e geração automatizada de relatórios internos. Com isso, sua empresa reduz erros operacionais e ganha tempo produtivo."
+    },
+    {
+      question: "Como as automações e sistemas se integram ao meu negócio?",
+      answer: "Criamos soluções que se conectam à rotina operacional da sua empresa e às ferramentas que você já utiliza (como CRMs, planilhas ou sistemas de gestão). As automações funcionam em segundo plano realizando a transferência de dados e execução de fluxos sem necessidade de alterar toda a sua infraestrutura atual."
+    },
+    {
       question: "Quanto custa um projeto?",
-      answer: "Cada projeto é planejado e desenvolvido de forma totalmente exclusiva para as necessidades comerciais do seu negócio. Após realizarmos nosso diagnóstico gratuito, apresentamos uma proposta sob medida com escopo, etapas e investimentos claros."
+      answer: "Cada projeto é planejado e dimensionado sob medida para a necessidade específica do seu negócio — seja um site com Agente de IA Web ou um software de automação de processos. Após realizarmos um diagnóstico gratuito, apresentamos uma proposta transparente com escopo, etapas e investimentos claros."
     },
     {
-      question: "Existe mensalidade?",
-      answer: "Não cobramos mensalidades obrigatórias pelo desenvolvimento do site ou da automação comercial. Você investe apenas pelo escopo do projeto fechado. Caso necessite de suporte contínuo, manutenção preventiva ou atualizações recorrentes, oferecemos planos de assessoria mensal opcionais."
+      question: "Em quanto tempo os projetos ficam prontos?",
+      answer: "O prazo varia conforme a complexidade. Sites e landing pages com Agente de IA Web costumam ficar prontos em 2 a 4 semanas. Já automações de processos mais robustas e softwares inteligentes sob medida levam de 8 a 14 semanas para serem desenvolvidos, integrados e validados na sua empresa."
     },
     {
-      question: "Em quanto tempo fica pronto?",
-      answer: "O prazo varia conforme a complexidade da solução. Sites e landing pages otimizadas para conversão costumam ficar prontos em até 2 semanas após o planejamento inicial. Já os ecossistemas completos com automação de atendimento no WhatsApp levam de 9 a 14 semanas para serem totalmente configurados, integrados e validados."
+      question: "Meu Agente de IA no site aprende sozinho?",
+      answer: "Sim. Ele é treinado especificamente com as informações, produtos e diretrizes do seu negócio e aprimora suas respostas com base nas interações com os visitantes. Também realizamos ajustes periódicos para garantir que o atendimento esteja sempre 100% alinhado com a sua estratégia comercial."
     },
     {
-      question: "Vocês fazem alterações depois que o site é entregue?",
-      answer: "Sim! Após a conclusão e publicação do projeto, oferecemos um período de garantia com suporte técnico incluso para pequenos ajustes e garantia de funcionamento. Além disso, fornecemos treinamento básico para que você possa alterar textos simples ou, se preferir, oferecemos pacotes de manutenção."
+      question: "Como funciona o suporte e manutenção após a entrega?",
+      answer: "Oferecemos garantia pós-entrega com suporte técnico ágil e humanizado diretamente via WhatsApp e e-mail. Garantimos o perfeito funcionamento de todas as automações, sites e Agentes de IA, além de fornecer treinamento para sua equipe operar a solução com tranquilidade."
     },
     {
-      question: "Como funciona o suporte?",
-      answer: "Nosso suporte é ágil, humanizado e feito diretamente através de WhatsApp e e-mail. Se houver qualquer dúvida técnica ou necessidade de ajuste no funcionamento do site ou da automação, nossa equipe estará pronta para resolver com prioridade."
-    },
-    {
-      question: "Preciso fornecer todo o conteúdo (textos, imagens, etc.)?",
-      answer: "Nós estruturamos toda a copy profissional com foco em vendas e selecionamos ou criamos os recursos de design para o seu site. Se você já possuir fotos reais da sua empresa, equipe ou produtos, nós as utilizaremos para aumentar ainda mais a autenticidade e a credibilidade."
-    },
-    {
-      question: "Vocês hospedam o site?",
-      answer: "Nós auxiliamos na contratação e configuração da hospedagem mais adequada e veloz para o seu projeto, além do registro do domínio (.com.br). Todo o registro é feito em nome e com os dados da sua empresa, garantindo que o seu site e domínio sejam 100% de sua propriedade."
-    },
-    {
-      question: "Posso parcelar o valor do projeto?",
-      answer: "Sim. Facilitamos o pagamento do seu projeto comercial. Normalmente, trabalhamos com uma entrada de 50% para início dos trabalhos e 50% na entrega final, ou oferecemos parcelamento em condições especiais que podem ser acordadas na apresentação do orçamento."
+      question: "Preciso fornecer todo o conteúdo e informações das automações?",
+      answer: "Nós fazemos um diagnóstico detalhado dos seus processos manuais para desenhar a lógica da automação ou criar a copy comercial do seu site. Sua empresa só precisa nos passar os materiais base e regras de negócio para que possamos construir a solução sob medida."
     }
   ];
 
@@ -70,7 +70,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative py-24 md:py-32 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
+    <section id="faq" className="relative py-28 md:py-36 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
       {/* Background decoration */}
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-brand-glow/[0.01] rounded-full blur-[120px] pointer-events-none" />
 
@@ -87,7 +87,7 @@ export default function FAQ() {
             Perguntas Frequentes
           </h2>
           <p className="font-sans text-foreground/70 text-base md:text-lg mt-4">
-            Respostas diretas e transparentes sobre o funcionamento e o processo.
+            Respostas diretas e transparentes sobre nossas soluções e processo.
           </p>
         </motion.div>
 
@@ -137,7 +137,6 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                {/* Content Container with AnimatePresence */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
@@ -157,8 +156,6 @@ export default function FAQ() {
             );
           })}
         </motion.div>
-
-
       </div>
     </section>
   );

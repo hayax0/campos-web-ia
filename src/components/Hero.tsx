@@ -19,9 +19,10 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        {/* Coluna Esquerda: Conteúdo de Texto e CTAs (Alinhamento editorial esquerdo) */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left w-full">          {/* Headline (Editorial style combining Display & Serif Italic font) */}
+
+        {/* Coluna Esquerda: Conteúdo de Texto e CTAs */}
+        <div className="lg:col-span-7 flex flex-col items-start text-left w-full">
+          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,10 +37,32 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans text-sm sm:text-base md:text-lg text-foreground/70 max-w-[60ch] leading-relaxed mb-10 text-pretty"
+            className="font-sans text-sm sm:text-base md:text-lg text-foreground/85 max-w-[60ch] leading-relaxed mb-8 text-pretty"
           >
-            Desenvolvemos sites de alta velocidade, automações de atendimento e soluções inteligentes sob medida para ajudar sua empresa a vender mais, ganhar credibilidade e economizar tempo.
+            Empresas perdem dezenas de oportunidades todos os dias por falta de atendimento imediato, sites que não convertem e processos manuais ineficientes. Nós resolvemos isso com tecnologia inteligente sob medida.
           </motion.p>
+
+          {/* Bullet Points - Pilares */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10 w-full"
+          >
+            {[
+              "Agentes IA para seu site",
+              "Softwares sob medida",
+              "Automação de processos internos",
+              "Desenvolvimento Web Premium"
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2.5">
+                <svg className="w-4 h-4 text-brand-glow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="font-sans text-sm text-foreground/80">{item}</span>
+              </div>
+            ))}
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
@@ -63,7 +86,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Coluna Direita: Posicionamento Editorial B2B (Premium & Minimalista) */}
+        {/* Coluna Direita: Posicionamento Editorial B2B */}
         <div className="lg:col-span-5 flex flex-col items-start justify-center relative w-full h-full min-h-[300px] lg:pl-12 lg:border-l border-black/5">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -77,15 +100,15 @@ export default function Hero() {
                 Sua empresa gerando oportunidades 24 horas por dia.
               </h2>
             </div>
-            
-            <p className="font-sans text-sm md:text-base text-foreground/60 leading-relaxed">
-              Não criamos apenas sites bonitos. Desenvolvemos estruturas completas de captação e automação comercial focadas em converter visitantes em clientes pagantes e liberar o tempo de sua equipe.
+
+            <p className="font-sans text-sm md:text-base text-foreground/75 leading-relaxed">
+              Não criamos apenas sites bonitos. Desenvolvemos estruturas completas de captação e automação comercial com Agentes de IA, softwares inteligentes e design focado em conversão para transformar visitantes em clientes pagantes.
             </p>
 
             <div className="pt-8 border-t border-black/5 grid grid-cols-2 gap-6 w-full">
               <div>
                 <span className="font-display text-3xl md:text-4xl font-bold text-foreground block">24/7</span>
-                <span className="font-sans text-[10px] text-foreground/40 uppercase tracking-widest mt-2 block">Atendimento Ativo</span>
+                <span className="font-sans text-[10px] text-foreground/40 uppercase tracking-widest mt-2 block">Atendimento com IA</span>
               </div>
               <div>
                 <span className="font-display text-3xl md:text-4xl font-bold text-foreground block">&lt; 1.2s</span>
@@ -97,7 +120,7 @@ export default function Hero() {
 
       </div>
 
-      {/* Scroll indicator - Responsive */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

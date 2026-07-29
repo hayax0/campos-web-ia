@@ -9,35 +9,41 @@ interface Service {
   description: string;
   roleName: string;
   features: string[];
+  highlightQuote: string;
 }
 
 export default function Services() {
   const services: Service[] = [
     {
-      id: "vitrine",
-      badge: "VENDAS & AUTORIDADE",
-      roleName: "Presença Digital",
-      title: "Sites de Alta Performance Focados em Vendas",
-      description: "Resolvemos o problema da falta de presença digital ou de sites lentos e amadores que afastam compradores. Entregamos uma estrutura rápida que conquista a confiança do cliente imediatamente e facilita o fechamento de novos negócios.",
+      id: "plataformas-web",
+      badge: "CONVERSÃO & IA",
+      roleName: "Plataformas Web Inteligentes",
+      title: "Sites Premium com Agente de IA Web Integrado",
+      description: "Sua empresa merece uma presença digital que trabalhe por você 24 horas por dia. Desenvolvemos sites de altíssima performance, rápidos, otimizados para SEO e preparados para receber um Agente de IA que atua como a primeira linha comercial do seu negócio.",
       features: [
-        "Desenvolvido do zero sob medida para destacar sua marca (zero modelos prontos)",
-        "Velocidade máxima de carregamento para manter o cliente em sua página",
-        "Estruturado com as melhores práticas de SEO para ser encontrado no Google",
-        "Pontos de conversão inteligentes que direcionam o lead qualificado para seu WhatsApp"
-      ]
+        "Design exclusivo e sob medida, sem modelos prontos",
+        "Velocidade máxima de carregamento e SEO estrutural",
+        "Agente de IA Web integrado: atende, qualifica e captura leads automaticamente",
+        "Encaminhamento inteligente de oportunidades reais para sua equipe comercial",
+        "Zero dependência de plataformas de terceiros para funcionar"
+      ],
+      highlightQuote: "O Agente de IA Web funciona como um vendedor digital que nunca dorme, nunca tira folga e está pronto para converter visitantes em clientes a qualquer hora do dia ou da noite."
     },
     {
-      id: "automacao",
-      badge: "ATENDIMENTO & PRODUTIVIDADE",
-      roleName: "Automação Comercial",
-      title: "Automação Inteligente de Vendas no WhatsApp",
-      description: "Eliminamos a perda de clientes por demora no atendimento. Desenvolvemos um sistema inteligente que responde mensagens instantaneamente, tira dúvidas frequentes e filtra os leads qualificados 24 horas por dia.",
+      id: "softwares-inteligentes",
+      badge: "PRODUTIVIDADE & AUTOMAÇÃO",
+      roleName: "Softwares Inteligentes",
+      title: "Sistemas Personalizados com Inteligência Artificial",
+      description: "Sua equipe perde horas com tarefas manuais que poderiam ser automatizadas. Desenvolvemos softwares sob medida que eliminam o trabalho repetitivo, reduzem erros operacionais e liberam seu time para focar no que realmente importa: fazer o negócio crescer.",
       features: [
-        "Atendimento imediato a qualquer momento do dia ou da noite",
-        "Filtro inteligente para separar clientes prontos para comprar de curiosos",
-        "Economia de tempo de digitação repetitiva de sua equipe comercial",
-        "Organização e encaminhamento automático de contatos interessados"
-      ]
+        "Extração automática de informações de PDFs e contratos",
+        "Reconhecimento óptico de caracteres (OCR) para digitalizar documentos físicos",
+        "Preenchimento e consolidação automática de planilhas",
+        "Importação e sincronização inteligente entre sistemas",
+        "Geração automatizada de relatórios e dashboards internos",
+        "Organização e classificação automática de documentos"
+      ],
+      highlightQuote: "Empresas que automatizam seus processos com IA reduzem em até 70% o tempo gasto em tarefas operacionais e praticamente eliminam erros de digitação e retrabalho."
     }
   ];
 
@@ -62,7 +68,7 @@ export default function Services() {
 
   return (
     <div className="relative">
-      <section id="servicos" className="relative py-24 md:py-32 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden scroll-mt-24">
+      <section id="servicos" className="relative py-28 md:py-36 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden scroll-mt-24">
         {/* Background Glow */}
         <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-brand-glow/[0.01] rounded-full blur-[100px] pointer-events-none" />
 
@@ -76,14 +82,14 @@ export default function Services() {
             className="max-w-3xl mb-16 md:mb-24"
           >
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
-              Soluções inteligentes focadas em <span className="font-serif italic text-brand-glow font-normal">vendas</span> e eficiência comercial.
+              Soluções inteligentes focadas em <span className="font-serif italic text-brand-glow font-normal">vendas</span> e eficiência operacional.
             </h2>
             <p className="font-sans text-foreground/70 text-base md:text-lg mt-4 max-w-2xl">
-              Ajudamos sua empresa a atrair mais clientes qualificados e reduzir o trabalho manual de atendimento com tecnologia sob medida.
+              Combinamos desenvolvimento web premium, Agentes de IA e softwares personalizados para criar ecossistemas digitais que fazem sua empresa vender mais e operar melhor.
             </p>
           </motion.div>
 
-          {/* Services Layout Alternado (Zebra Style) */}
+          {/* Services Layout Alternado */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -100,11 +106,11 @@ export default function Services() {
                   variants={itemVariants}
                   className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full scroll-mt-28"
                 >
-                  {/* Coluna Texto (Card de Posicionamento) */}
+                  {/* Coluna Texto */}
                   <div className={`w-full lg:col-span-6 p-8 md:p-10 rounded-3xl bg-[#f5f1ea] border border-black/[0.02] border-l-4 border-l-brand-glow/20 hover:border-l-brand-glow hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(20,160,100,0.08)] transition-all duration-300 flex flex-col items-start ${isEven ? "lg:order-1" : "lg:order-2"}`}>
-                    {/* Badge and Role */}
+                    {/* Badge */}
                     <div className="flex flex-wrap items-center gap-3 mb-6">
-                      <span className="text-[10px] font-bold tracking-wider text-brand-glow bg-brand-glow/10 px-3 py-1 rounded-full border border-brand-glow/20">
+                      <span className="badge-premium">
                         {service.badge}
                       </span>
                       <span className="text-xs font-mono text-foreground/45">
@@ -115,7 +121,7 @@ export default function Services() {
                         <svg className="w-3.5 h-3.5 text-foreground/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span>Prazo: {idx === 0 ? "2 semanas" : "9-14 semanas"}</span>
+                        <span>Prazo: {idx === 0 ? "2 a 4 semanas" : "8 a 14 semanas"}</span>
                       </span>
                     </div>
 
@@ -125,14 +131,19 @@ export default function Services() {
                     </h3>
 
                     {/* Description */}
-                    <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed mb-8">
+                    <p className="font-sans text-foreground/85 text-sm md:text-base leading-relaxed mb-8">
                       {service.description}
                     </p>
 
                     {/* Features List */}
                     <ul className="space-y-4 mb-8 w-full">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-sm md:text-base text-foreground/90">
+                        <motion.li
+                          key={idx}
+                          className="flex items-start gap-3 text-sm md:text-base text-foreground/90 group"
+                          whileHover={{ x: 4 }}
+                          transition={{ duration: 0.25, ease: "easeOut" }}
+                        >
                           <svg
                             className="w-4 h-4 text-brand-glow flex-shrink-0 mt-1.5"
                             fill="none"
@@ -148,15 +159,15 @@ export default function Services() {
                             />
                           </svg>
                           <span className="font-sans text-foreground/80">{feature}</span>
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
 
                     {/* Action Link */}
                     <div className="pt-6 border-t border-black/5 w-full">
                       <a
-                        href="#planos"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow transition-colors duration-300 group group-hover:text-brand-glow"
+                        href="#contato"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow transition-colors duration-300 group"
                       >
                         <span>Solicitar esta solução</span>
                         <svg
@@ -177,14 +188,12 @@ export default function Services() {
                     </div>
                   </div>
 
-                  {/* Coluna Decorativa / Espaço Negativo Sofisticado (Entrega Máxima) */}
+                  {/* Coluna Decorativa - Citação de Destaque */}
                   <div className={`w-full lg:col-span-6 min-h-[220px] rounded-3xl bg-black/[0.01] border border-black/[0.03] p-8 md:p-12 flex flex-col justify-center ${isEven ? "lg:order-2" : "lg:order-1"}`}>
                     <div className="border-l-2 border-brand-glow/30 pl-6 py-2">
-                      <span className="font-mono text-[10px] text-foreground/35 uppercase tracking-[0.25em]">ENTREGA MÁXIMA</span>
-                      <p className="font-serif italic text-xl md:text-2xl text-foreground/80 mt-2 font-normal">
-                        {idx === 0 
-                          ? "Design sob medida de alta velocidade, criado sem amarras de templates prontos."
-                          : "Sistemas de conversação ágeis no WhatsApp, estruturados para qualificar leads reais."}
+                      <span className="font-mono text-[10px] text-foreground/35 uppercase tracking-[0.25em]">DIFERENCIAL</span>
+                      <p className="font-serif italic text-xl md:text-2xl text-foreground/80 mt-2 font-normal leading-relaxed">
+                        {service.highlightQuote}
                       </p>
                     </div>
                   </div>

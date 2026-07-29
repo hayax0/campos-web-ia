@@ -8,6 +8,7 @@ interface PlanItem {
   deliveryTime: string;
   description: string;
   features: string[];
+  diferencial: string;
   ctaText: string;
   whatsappMessage: string;
   popular: boolean;
@@ -23,37 +24,39 @@ interface Testimonial {
 export default function Pricing() {
   const plans: PlanItem[] = [
     {
-      name: "Presença Digital Otimizada",
+      name: "Presença Digital Inteligente",
       paymentTerms: "50% de sinal e 50% na entrega",
-      deliveryTime: "2 semanas",
-      description: "Ideal para empresas que querem dominar as buscas do Google, gerar credibilidade instantânea e converter visitantes em contatos reais.",
+      deliveryTime: "2 a 4 semanas",
+      description: "Ideal para empresas que querem ser encontradas no Google, gerar credibilidade instantânea e capturar oportunidades 24 horas por dia com um Agente de IA Web.",
       features: [
-        "Site exclusivo planejado para sua taxa de conversão",
-        "Carregamento imediato que evita a perda de clientes",
-        "Configuração completa de domínio e e-mails profissionais",
-        "Pontos de contato estratégicos integrados ao WhatsApp",
-        "Design moderno e otimizado para celulares e computadores",
-        "Código limpo que posiciona sua marca no topo do Google"
+        "Site premium com design exclusivo e carregamento ultrarrápido",
+        "Landing page otimizada para conversão de leads",
+        "Agente de IA Web integrado atende, qualifica e captura contatos",
+        "Configuração completa de domínio, e-mails profissionais e SEO",
+        "Design responsivo adaptado a celulares e computadores",
+        "Maior estabilidade operacional sem depender de integrações complexas com terceiros"
       ],
+      diferencial: "Maior estabilidade operacional por não depender de integrações complexas com plataformas de terceiros.",
       ctaText: "Agendar diagnóstico gratuito",
-      whatsappMessage: "Olá! Gostaria de agendar um diagnóstico gratuito para estruturar nossa Presença Digital Otimizada.",
+      whatsappMessage: "Olá! Gostaria de agendar um diagnóstico gratuito para estruturar nossa Presença Digital Inteligente.",
       popular: false
     },
     {
-      name: "Máquina de Atração & Automação Comercial",
+      name: "Ecossistema Inteligente",
       paymentTerms: "50% de sinal e 50% na entrega",
-      deliveryTime: "9 a 14 semanas",
-      description: "A solução comercial definitiva. Sua empresa com posicionamento de alto padrão e atendimento comercial rodando de forma automática 24/7.",
+      deliveryTime: "8 a 14 semanas",
+      description: "A solução completa para empresas que querem unir presença digital de alto nível com automação inteligente de processos internos usando IA.",
       features: [
-        "Tudo incluso na solução de Presença Digital Otimizada",
-        "Atendimento automático configurado no seu WhatsApp comercial",
-        "Respostas imediatas para qualificar e converter novos leads",
-        "Filtro de contatos para economizar horas de digitação manual",
-        "Organização inteligente das oportunidades de vendas",
-        "Suporte completo para manter sua operação vendendo sem parar"
+        "Tudo incluso no plano Presença Digital Inteligente",
+        "Softwares personalizados sob medida para sua operação",
+        "Automação de processos internos com inteligência artificial",
+        "Extração e organização automática de dados de documentos e PDFs",
+        "Integração entre sistemas e consolidação inteligente de dados",
+        "Suporte contínuo e acompanhamento de resultados"
       ],
+      diferencial: "Empresas que adotam automação inteligente economizam horas diárias de trabalho manual e reduzem drasticamente erros operacionais.",
       ctaText: "Agendar diagnóstico gratuito",
-      whatsappMessage: "Olá! Gostaria de agendar um diagnóstico gratuito para a solução de Máquina de Atração e Automação Comercial.",
+      whatsappMessage: "Olá! Gostaria de agendar um diagnóstico gratuito para o Ecossistema Inteligente.",
       popular: true
     }
   ];
@@ -63,19 +66,19 @@ export default function Pricing() {
       name: "Rodrigo Almeida",
       role: "Sócio Diretor",
       company: "Almeida Advocacia",
-      text: "O site exclusivo desenvolvido pelo Caio mudou a apresentação da nossa empresa. Em menos de 10 dias após o lançamento, passamos a receber contatos qualificados vindos de pesquisas no Google."
+      text: "O site exclusivo desenvolvido pelo Caio mudou a apresentação da nossa empresa. Em menos de 10 dias após o lançamento, passamos a receber contatos qualificados vindos de pesquisas no Google que antes não tínhamos."
     },
     {
       name: "Mariana Costa",
       role: "Fundadora",
       company: "Vita Estética",
-      text: "O atendimento automático no WhatsApp salvou nossa recepção. Ele atende, tira dúvidas comuns e direciona os contatos na hora, mesmo de madrugada. Excelente solução."
+      text: "O Agente de IA no nosso site transformou a forma como captamos clientes. Ele tira dúvidas, qualifica os contatos e só direciona os realmente interessados tudo automático, mesmo de madrugada. Nossa taxa de conversão de visitantes subiu significativamente."
     },
     {
       name: "Bruno Martins",
-      role: "Head de Vendas",
+      role: "Diretor Operacional",
       company: "Martins Logística",
-      text: "Contratamos o Plano Completo. Nosso novo site exclusivo integrado ao atendimento por mensagens reduziu nosso tempo de resposta para imediato e facilitou muito nossas vendas."
+      text: "Contratamos o Ecossistema Inteligente e o impacto foi imediato. A automação de relatórios e a organização de documentos que antes tomavam um dia inteiro da nossa equipe agora são feitas em minutos. Economia real de tempo e dinheiro."
     }
   ];
 
@@ -99,7 +102,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="planos" className="relative py-24 md:py-32 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
+    <section id="planos" className="relative py-28 md:py-36 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-glow/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
@@ -116,7 +119,7 @@ export default function Pricing() {
             Soluções planejadas para multiplicar seus <span className="font-serif italic text-brand-glow font-normal">clientes</span> e faturamento.
           </h2>
           <p className="font-sans text-foreground/70 text-base md:text-lg mt-4">
-            Escolha a estrutura ideal para a sua empresa crescer. Desenvolvemos cada detalhe com foco em conversão de vendas e agilidade de atendimento.
+            Escolha a estrutura ideal para sua empresa crescer com presença digital inteligente, Agentes de IA e automação de processos.
           </p>
         </motion.div>
 
@@ -139,7 +142,7 @@ export default function Pricing() {
               }`}
             >
               {plan.popular && (
-                <div className="absolute top-4 right-6 bg-brand-glow/10 text-brand-glow text-[9px] font-mono tracking-widest uppercase px-3 py-1 rounded-full border border-brand-glow/20">
+                <div className="badge-premium absolute top-4 right-6">
                   Recomendado
                 </div>
               )}
@@ -149,11 +152,11 @@ export default function Pricing() {
                 <h3 className="font-display text-xl font-bold text-foreground mb-2">
                   {plan.name}
                 </h3>
-                <p className="font-sans text-xs text-foreground/60 mb-6 min-h-[40px]">
+                <p className="font-sans text-xs text-foreground/80 mb-6 min-h-[40px]">
                   {plan.description}
                 </p>
 
-                {/* Plan Price */}
+                {/* Plan Info */}
                 <div className="mb-6">
                   <div className="font-display text-3xl font-bold text-foreground tracking-tight">
                     Sob consulta
@@ -174,13 +177,25 @@ export default function Pricing() {
                   </div>
                 </div>
 
+                {/* Diferencial */}
+                <div className="mb-6 p-4 rounded-xl bg-brand-glow/[0.03] border border-brand-glow/10">
+                  <p className="font-sans text-xs text-foreground/70 leading-relaxed">
+                    <span className="font-semibold text-brand-glow">Diferencial:</span> {plan.diferencial}
+                  </p>
+                </div>
+
                 {/* Divider */}
                 <div className="h-[1px] bg-black/5 mb-8" />
 
                 {/* Plan Features */}
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-foreground/90">
+                    <motion.li
+                      key={idx}
+                      className="flex items-start gap-3 text-sm text-foreground/90"
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                    >
                       <svg
                         className="w-4 h-4 text-brand-glow flex-shrink-0 mt-1"
                         fill="none"
@@ -196,7 +211,7 @@ export default function Pricing() {
                         />
                       </svg>
                       <span className="font-sans text-foreground/80">{feature}</span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
@@ -248,7 +263,7 @@ export default function Pricing() {
                 className={`flex flex-col justify-between relative h-full ${idx > 0 ? "md:pl-12" : ""}`}
               >
                 <span className="absolute -top-4 left-0 text-6xl font-serif text-brand-glow/10 select-none pointer-events-none">
-                  “
+                  &ldquo;
                 </span>
                 <div className="pt-4 z-10">
                   {/* Evaluation Stars */}
@@ -268,7 +283,7 @@ export default function Pricing() {
                     {t.name}
                   </div>
                   <div className="font-sans text-xs text-foreground/40 mt-0.5">
-                    {t.role} · <span className="text-brand-glow/90">{t.company}</span>
+                    {t.role} &middot; <span className="text-brand-glow/90">{t.company}</span>
                   </div>
                 </div>
               </motion.div>

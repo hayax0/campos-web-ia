@@ -8,28 +8,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Campos Web & IA — Consultoria B2B de Transformação Digital",
+  title: "Campos Web & IA — Agentes de IA, Sites Premium e Softwares Inteligentes",
   description:
-    "Construímos estruturas digitais premium e automações inteligentes que ajudam empresas a conquistar clientes, melhorar processos e vender todos os dias.",
+    "Desenvolvemos sites de alta performance, Agentes de IA Web e softwares inteligentes que ajudam sua empresa a vender mais, automatizar processos e operar melhor.",
   icons: {
     icon: "/icon.png",
   },
   keywords: [
+    "agente de IA web",
+    "sites de alta conversão",
+    "softwares personalizados",
+    "automação de processos",
+    "desenvolvimento web premium",
     "landing page B2B",
-    "vitrine digital premium",
-    "automação comercial",
-    "automação de atendimento",
-    "consultoria de transformação digital",
-    "chatbot inteligência artificial",
+    "inteligência artificial para empresas",
     "Campos Web e IA",
     "Caio Campos",
     "eficiência operacional B2B"
   ],
   authors: [{ name: "Caio Campos" }],
   openGraph: {
-    title: "Campos Web & IA — Consultoria B2B de Transformação Digital",
+    title: "Campos Web & IA — Agentes de IA, Sites Premium e Softwares Inteligentes",
     description:
-      "Construímos estruturas digitais premium e automações inteligentes que ajudam empresas a conquistar clientes, melhorar processos e vender todos os dias.",
+      "Desenvolvemos sites de alta performance, Agentes de IA Web e softwares inteligentes que ajudam sua empresa a vender mais, automatizar processos e operar melhor.",
     type: "website",
     locale: "pt_BR",
   },

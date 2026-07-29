@@ -14,24 +14,24 @@ export default function CTASection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.nome || !formData.mensagem) {
-      alert("Por favor, preencha o seu nome e o principal desafio da sua empresa.");
+      alert("Por favor, preencha o seu nome e a mensagem.");
       return;
     }
 
-    const formattedMessage = `Olá, preenchi o formulário de diagnóstico da Campos Web IA!\n\n👤 *Nome:* ${formData.nome}\n✉️ *E-mail:* ${formData.email || "Não informado"}\n💼 *Ramo da Empresa:* ${formData.nicho || "Não informado"}\n\n💬 *Desafio / Dúvida:* \n${formData.mensagem}`;
-    
+    const formattedMessage = `Olá, preenchi o formulário de diagnóstico da Campos Web IA!\n\n👤 *Nome:* ${formData.nome}\n✉️ *E-mail:* ${formData.email || "Não informado"}\n💼 *Segmento:* ${formData.nicho || "Não informado"}\n\n💬 *Mensagem:* \n${formData.mensagem}`;
+
     const whatsappUrl = `https://wa.me/5521997411009?text=${encodeURIComponent(formattedMessage)}`;
     window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <section id="contato" className="relative py-24 md:py-32 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
+    <section id="contato" className="relative py-28 md:py-36 px-6 bg-background z-10 border-t border-black/5 w-full overflow-hidden">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-glow/[0.02] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto w-full relative z-10">
-        
-        {/* Formulário de Dúvidas */}
+
+        {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,18 +42,18 @@ export default function CTASection() {
           <div>
             {/* Header Form */}
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2 leading-tight text-center">
-              Pronto para descobrir o quanto sua empresa pode crescer?
+              Pronto para transformar a presença digital da sua empresa?
             </h3>
             <p className="font-sans text-foreground/75 text-sm mb-8 leading-relaxed text-center">
-              Solicite seu diagnóstico comercial gratuito. Vamos analisar suas oportunidades comerciais digitais e desenhar as soluções sob medida para sua empresa.
+              Solicite seu diagnóstico gratuito. Vamos analisar suas oportunidades e desenhar a solução ideal  seja um site com Agente de IA, software personalizado ou automação inteligente.
             </p>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Nome */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="nome" className="text-xs font-semibold text-foreground/80 font-sans">
+                  <label htmlFor="nome" className="text-xs font-semibold text-foreground/90 font-sans tracking-wider uppercase">
                     Nome Completo
                   </label>
                   <input
@@ -63,13 +63,13 @@ export default function CTASection() {
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
                     placeholder="Seu nome completo"
-                    className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none font-sans"
+                    className="input-editorial"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-xs font-semibold text-foreground/80 font-sans">
+                  <label htmlFor="email" className="text-xs font-semibold text-foreground/90 font-sans tracking-wider uppercase">
                     E-mail corporativo
                   </label>
                   <input
@@ -78,14 +78,14 @@ export default function CTASection() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Seu e-mail"
-                    className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none font-sans"
+                    className="input-editorial"
                   />
                 </div>
               </div>
 
               {/* Nicho */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="nicho" className="text-xs font-semibold text-foreground/80 font-sans">
+                <label htmlFor="nicho" className="text-xs font-semibold text-foreground/90 font-sans tracking-wider uppercase">
                   Segmento da sua Empresa
                 </label>
                 <input
@@ -93,15 +93,15 @@ export default function CTASection() {
                   id="nicho"
                   value={formData.nicho}
                   onChange={(e) => setFormData({ ...formData, nicho: e.target.value })}
-                  placeholder="Qual o ramo da empresa? (ex: Advocacia, Clínica de Estética, Pet Shop)"
-                  className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none font-sans"
+                  placeholder="Ex: Advocacia, Clínica de Estética, Pet Shop, Logística"
+                  className="input-editorial"
                 />
               </div>
 
               {/* Mensagem */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="mensagem" className="text-xs font-semibold text-foreground/80 font-sans">
-                  Qual o principal desafio de vendas ou atendimento da sua empresa hoje?
+                <label htmlFor="mensagem" className="text-xs font-semibold text-foreground/90 font-sans tracking-wider uppercase">
+                  Qual o principal desafio da sua empresa hoje?
                 </label>
                 <textarea
                   id="mensagem"
@@ -109,8 +109,8 @@ export default function CTASection() {
                   rows={4}
                   value={formData.mensagem}
                   onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
-                  placeholder="Ex: Perdemos leads por demora na resposta no WhatsApp ou nosso site atual não traz visitas qualificadas."
-                  className="w-full bg-background border border-black/10 focus:border-brand-glow focus:ring-1 focus:ring-brand-glow rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground/45 transition-all outline-none resize-none font-sans"
+                  placeholder="Ex: Quero um Agente IA para meu site. / Preciso automatizar processos internos. / Quero eliminar tarefas repetitivas da minha equipe."
+                  className="input-editorial resize-none min-h-[100px]"
                 />
               </div>
 
@@ -131,7 +131,3 @@ export default function CTASection() {
     </section>
   );
 }
-
-
-
-
