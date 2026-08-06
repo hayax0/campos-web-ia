@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import AccordionGallery from "./AccordionGallery";
 
 interface Project {
   id: string;
@@ -56,26 +57,6 @@ export default function Portfolio() {
       mobileImage: "/tozzamobile.png",
       tags: ["Pet Care", "Agendamento Ágil", "Layout Amigável", "Acessibilidade"]
     },
-    {
-      id: "conversao-barber",
-      title: "Blinder's Barbershop (Validação Comercial)",
-      description: "Direcionamento estratégico de fluxo. Identificamos que o cliente tinha foco apenas em redes sociais, estruturando um canal direto de atração digital e convertendo o interesse em reuniões comerciais imediatas.",
-      url: "#contato",
-      domain: "prospeccao-digital",
-      pcImage: "",
-      mobileImage: "/conversao_barber.jpg",
-      tags: ["Prospecção Direta", "Conversão Comercial", "Atração Digital"]
-    },
-    {
-      id: "conversao-pix",
-      title: "Tozza Boutique (Comprovação Comercial)",
-      description: "Fechamento de projeto de alta conversão. Desenvolvimento e entrega de solução comercial ágil, com comprovação direta de retorno financeiro e satisfação do cliente na jornada de compra.",
-      url: "#contato",
-      domain: "whatsapp.com",
-      pcImage: "",
-      mobileImage: "/conversao_pix.jpg",
-      tags: ["Geração de Receita", "Retorno de Investimento", "Validação Financeira"]
-    }
   ];
 
   const headerVariants: Variants = {
@@ -121,158 +102,18 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        {/* Projects List */}
-        <div className="space-y-32 md:space-y-40 w-full">
-          {projects.map((project, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <motion.div
-                key={project.id}
-                variants={projectVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 w-full ${
-                  isEven ? "" : "lg:flex-row-reverse"
-                }`}
-              >
-                {/* Info Column */}
-                <div className="w-full lg:w-5/12 flex flex-col items-start">
-                  <span className="font-mono text-[10px] text-brand-glow/70 mb-3 tracking-[0.25em] uppercase">
-                    CASO DE ESTUDO 0{index + 1}
-                  </span>
-                  <h3 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
-                    {project.title}
-                  </h3>
-                  <p className="font-sans text-foreground/70 text-sm md:text-base leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-medium tracking-wider text-foreground/70 bg-black/[0.03] border border-black/5 px-2.5 py-1 rounded-md"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Link CTA */}
-                  {project.url.startsWith('#') ? (
-                    <a
-                      href={project.url}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow border-b border-black/10 hover:border-brand-glow/40 pb-0.5 transition-colors duration-300 group"
-                    >
-                      <span>Quero descobrir oportunidades</span>
-                      <svg
-                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </a>
-                  ) : (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-brand-glow border-b border-black/10 hover:border-brand-glow/40 pb-0.5 transition-colors duration-300 group"
-                    >
-                      <span>Visitar site publicado</span>
-                      <svg
-                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  )}
-                </div>
-
-                {/* Mockups Column */}
-                <div className="w-full lg:w-7/12 flex items-center justify-center relative">
-                  {project.pcImage ? (
-                    <div className="relative w-full max-w-[480px] md:max-w-[520px] aspect-[16/11]">
-                      
-                      {/* Mockup Desktop (Navegador) */}
-                      <motion.div
-                        className="absolute right-0 top-0 w-[85%] sm:w-[88%] aspect-[16/10] rounded-xl border border-black/5 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] z-0 group"
-                        whileHover={{ y: -6, boxShadow: "0 25px 50px rgba(0,0,0,0.08)" }}
-                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                      >
-                        {/* Barra do navegador */}
-                        <div className="flex items-center gap-1.5 px-4 py-2.5 bg-black/[0.02] border-b border-black/5 relative z-10">
-                          <div className="flex gap-1.5">
-                            <div className="w-2 h-2 rounded-full bg-black/10" />
-                            <div className="w-2 h-2 rounded-full bg-black/10" />
-                            <div className="w-2 h-2 rounded-full bg-black/10" />
-                          </div>
-                          <div className="absolute left-1/2 -translate-x-1/2 text-[9px] font-mono text-foreground/40 tracking-wider truncate max-w-[180px] md:max-w-xs">
-                            {project.domain}
-                          </div>
-                        </div>
-                        
-                        {/* Conteúdo do Site (Imagem estática encaixada) */}
-                        <div className="relative w-full h-[calc(100%-35px)] overflow-hidden bg-black/[0.02]">
-                          <Image
-                            src={project.pcImage}
-                            alt={`${project.title} Desktop`}
-                            fill
-                            unoptimized
-                            className="object-cover object-top"
-                          />
-                        </div>
-                      </motion.div>
-
-                      {/* Mockup Mobile (Celular Slim Moderno) */}
-                      <motion.div
-                        className="absolute left-0 bottom-0 w-[26%] sm:w-[25%] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.08)] z-10"
-                        whileHover={{ y: -4, scale: 1.02 }}
-                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                      >
-                        {/* Conteúdo do Site Mobile (Imagem estática encaixada) */}
-                        <div className="relative w-full h-full overflow-hidden bg-black/[0.02] rounded-[1.4rem]">
-                          <Image
-                            src={project.mobileImage}
-                            alt={`${project.title} Mobile`}
-                            fill
-                            unoptimized
-                            className="object-cover object-top"
-                          />
-                        </div>
-                      </motion.div>
-
-                    </div>
-                  ) : (
-                    /* Mockup Mobile Centralizado e Maior para Prints */
-                    <motion.div
-                      className="relative w-[50%] max-w-[260px] aspect-[9/18.5] rounded-3xl border-4 border-black/10 bg-black/[0.04] overflow-hidden shadow-[0_25px_50px_rgba(0,0,0,0.12)] z-10"
-                      whileHover={{ y: -6, boxShadow: "0 30px 60px rgba(0,0,0,0.15)" }}
-                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      <div className="relative w-full h-full overflow-hidden bg-black/[0.02] rounded-[1.4rem]">
-                        <Image
-                          src={project.mobileImage}
-                          alt={`${project.title} Prova de Conversão`}
-                          fill
-                          unoptimized
-                          className="object-contain object-top"
-                        />
-                      </div>
-                    </motion.div>
-                  )}
-                </div>
-
-              </motion.div>
-            );
-          })}
+        {/* Projects Gallery */}
+        <div className="w-full mt-12 md:mt-20 max-w-6xl mx-auto px-4 md:px-0">
+          <AccordionGallery 
+            items={projects.map((p) => ({
+              image: p.pcImage || p.mobileImage,
+              label: p.title,
+              link: p.url,
+            }))}
+            expandRatio={0.6}
+            height={500}
+            className="w-full shadow-2xl"
+          />
         </div>
       </div>
     </section>

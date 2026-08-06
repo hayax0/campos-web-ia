@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import RotatingText from "./RotatingText";
 
 export default function Hero() {
   return (
@@ -29,7 +30,20 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-[-0.03em] text-foreground leading-[1.05] mb-6 text-balance"
           >
-            Sua empresa pode estar <span className="font-serif italic font-normal text-brand-glow">perdendo clientes</span> todos os dias sem perceber.
+            Sua empresa pode estar{" "}
+            <RotatingText
+              texts={['perdendo clientes', 'ignorando vendas', 'ficando para trás']}
+              mainClassName="font-serif italic font-normal text-brand-glow inline-flex"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={3500}
+            />
+            {" "}todos os dias sem perceber.
           </motion.h1>
 
           {/* Subheadline */}
