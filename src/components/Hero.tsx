@@ -30,9 +30,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-[-0.03em] text-foreground leading-[1.05] mb-6 text-balance"
           >
-            Sua empresa pode estar{" "}
+            Tecnologia inteligente sob medida para você{" "}
             <RotatingText
-              texts={['perdendo clientes', 'ignorando vendas', 'ficando para trás']}
+              texts={['lucrar mais', 'vender mais', 'ganhar escala']}
               mainClassName="font-serif italic font-normal text-brand-glow inline-flex"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
@@ -41,9 +41,9 @@ export default function Hero() {
               staggerDuration={0.025}
               splitLevelClassName="overflow-hidden"
               transition={{ type: "spring", damping: 30, stiffness: 400 }}
-              rotationInterval={3500}
+              rotationInterval={2000}
             />
-            {" "}todos os dias sem perceber.
+            {" "}no seu negócio.
           </motion.h1>
 
           {/* Subheadline */}
@@ -53,7 +53,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="font-sans text-sm sm:text-base md:text-lg text-foreground/85 max-w-[60ch] leading-relaxed mb-8 text-pretty"
           >
-            Empresas perdem dezenas de oportunidades todos os dias por falta de atendimento imediato, sites que não convertem e processos manuais ineficientes. Nós resolvemos isso com tecnologia inteligente sob medida.
+            Sua empresa pode estar perdendo clientes todos os dias sem perceber. Os culpados são a falta de atendimento imediato, sites que não convertem e processos manuais ineficientes. Nós resolvemos isso.
           </motion.p>
 
           {/* Bullet Points - Pilares */}

@@ -42,7 +42,7 @@ export default function CTASection() {
           <div>
             {/* Header Form */}
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2 leading-tight text-center">
-              Pronto para transformar a presença digital da sua empresa?
+              Pronto para parar de perder oportunidades e começar a escalar?
             </h3>
             <p className="font-sans text-foreground/75 text-sm mb-8 leading-relaxed text-center">
               Solicite seu diagnóstico gratuito. Vamos analisar suas oportunidades e desenhar a solução ideal  seja um site com Agente de IA, software personalizado ou automação inteligente.
